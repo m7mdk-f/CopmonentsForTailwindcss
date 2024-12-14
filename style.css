@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* loading  */
+.hide {
+    animation: hide .1s linear 2s forwards;
+}
+
+
+@keyframes hide {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
+    }
+}
+
+.rot {
+    animation: rot .5s ease-in-out .4s;
+}
+
+@keyframes rot {
+
+    0%,
+    100% {
+        rotate: 0;
+        transform: scale(1);
+    }
+
+    50% {
+        rotate: 45deg;
+        transform: scale(0.8, .8);
+    }
+}
+
+.postion {
+    animation: postion .9s ease-in-out forwards;
+
+}
+
+.ops {
+    animation: opsate .5s ease-in-out 1s forwards;
+}
+
+@keyframes postion {
+    0% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes opsate {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.copycode::before {
+    content: "Copied";
+    position: absolute;
+    top: -45px;
+    right: 18px;
+    background-color: #5c81dc;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: white;
+    display: none;
+}
+
+.copycode::after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 45px;
+    background-color: #5c81dc;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    display: none;
+
+}
+
+.copycode.active::before {
+    display: block;
+}
+
+.copycode.active::after {
+    display: block;
+}
+
+@media screen and (min-width: 478px) {
+    .container {
+        max-width: 1350px;
+        margin: 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (max-width: 478px) {
+    .container {
+        max-width: 1350px;
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.search:hover path,
+.search:hover span {
+    fill: #009ef7;
+    color: #009ef7;
+}
+
+.mood:hover .jj {
+    fill: #009ef7;
+    color: #009ef7;
+}
+
+.mood:hover ul {
+    display: block;
+
+}
+
+
+.ani {
+    animation: top .5s linear forwards;
+}
+
+@keyframes top {
+    0% {
+        top: 200%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 1;
+    }
+}
+
+@layer components {
+
+    .active1 {
+        color: #009ef7;
+        background-color: #2A2A3C;
+
+    }
+
+    .active2 {
+        color: #009ef7;
+        background-color: #F9F9F9;
+    }
+
+
+    .backgrounddark {
+        background-color: rgb(55 65 81/1);
+
+    }
+
+    .background {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scrollbar2::-webkit-scrollbar {
+        width: 5px;
+        height: 1px;
+    }
+
+    /* Track */
+    .scrollbar2dark::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: #888;
+    }
+
+    /* Handle */
+    .scrollbar2dark::-webkit-scrollbar-thumb {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    /* Track */
+    .scrollbar2::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    .scrollbar2::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+    
+
+    /* index page  */
+    /* you should droop in style tailwindcss  */
+    .tabledark tr:nth-child(even) {
+        background-color: rgb(30 30 45 / var(--tw-bg-opacity));
+    }
+
+    .table tr:nth-child(even) {
+        background-color: rgb(245 248 250 / var(--tw-bg-opacity));
+    }
+
+}

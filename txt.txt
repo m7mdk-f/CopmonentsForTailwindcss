@@ -1,0 +1,3 @@
+npx tailwindcss -i ./style.css -o ./public/style/tailwindcss.css --watch
+
+//Ibrahim Yaseen

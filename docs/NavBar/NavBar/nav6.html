@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nav6</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b210bcb075.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/NavBar.css">
+
+  <style>
+    nav a {
+      position: relative;
+      color: #999;
+      font-size: 1.5em;
+      text-decoration: none;
+      z-index: 2;
+      height: 75px;
+      transition: 300ms;
+      padding: 0 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav a.active {
+      color: #222327;
+    }
+
+    .indicator::before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 15px;
+      background-color: #29fd53;
+      border-radius: 15px;
+      left: -30px;
+      box-shadow: 15px 30px #29fd53,
+        5px 60px #29fd53,
+        -15px 15px #222327,
+        -10px 45px #222327;
+      transition: 300ms;
+    }
+
+    .indicator::after {
+      content: '';
+      position: absolute;
+      right: -30px;
+      width: 50px;
+      height: 15px;
+      background-color: #29fd53;
+      border-radius: 15px;
+      box-shadow: 5px 30px #29fd53,
+        -15px 60px #29fd53,
+        15px 15px #222327,
+        10px 45px #222327;
+      transition: 300ms;
+    }
+
+    .indicator.change::before {
+      left: -10px;
+      box-shadow: -15px 30px #29fd53,
+        -5px 60px #29fd53,
+        -10px 15px #222327,
+        -20px 45px #222327;
+    }
+
+    .indicator.change::after {
+      right: -20px;
+      box-shadow: 10px 30px #29fd53,
+        20px 60px #29fd53,
+        15px 15px #222327,
+        25px 45px #222327;
+    }
+  </style>
+</head>
+
+<body class="font-['Poppins',sans-serif] flex justify-center items-center min-h-screen bg-[#151517]">
+
+  <nav class="relative flex gap-8 py-4 px-[60px] bg-[#222327]">
+    <a href="#"> Home </a>
+    <a href="#"> About </a>
+    <a href="#"> Services </a>
+    <a href="#"> Portfolio </a>
+    <a href="#"> Team </a>
+    <a href="#"> Concat </a>
+    <div class="indicator absolute h-[75px] w-24 z-[1] bg-[#29fd53] duration-300 hidden"></div>
+  </nav>
+
+
+  <script>
+    let marker = document.querySelector('.indicator'),
+      nav = document.querySelector('nav'),
+      items = document.querySelectorAll('nav a');
+
+    nav.onclick = function () {
+      marker.classList.toggle('change');
+    };
+
+    function indicator(e) {
+      marker.style.left = e.offsetLeft + 'px';
+      marker.style.width = e.offsetWidth + 'px';
+      marker.style.display = 'block';
+      marker.style.filter = 'hue-rotate(' + Math.random() * 360 + 'deg)'
+    }
+
+    items.forEach(links => {
+      links.addEventListener('click', (e) => {
+        indicator(e.target)
+      })
+    });
+
+    function addActiveClass() {
+      items.forEach((i) => i.classList.remove('active'));
+      this.classList.add('active');
+    };
+
+    items.forEach((i) => i.addEventListener('click', addActiveClass));
+  </script>
+</body>
+
+</html>

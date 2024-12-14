@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark system ">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="./style/tailwindcss.css" />
+
+
+
+    <link rel="stylesheet" href="codemirror/codemirror.css">
+    <link rel="stylesheet" href="./codemirror/dracula.css">
+    <link rel="stylesheet" href="./codemirror/xq-light.css">
+    <script src="./codemirror/codemirror.js"></script>
+    <script src="./codemirror/xml.js"></script>
+
+</head>
+
+<body class="bg-[#f5f8fa] scrollbar  relative dark:bg-[#151521] ">
+    <style>
+        #menu:hover #userDropdown {
+            display: block;
+        }
+
+        .ani {
+            animation: top .5s linear forwards;
+        }
+
+        @keyframes top {
+            0% {
+                top: 200%;
+                opacity: 0;
+            }
+
+            100% {
+                top: 100%;
+                opacity: 1;
+            }
+        }
+    </style>
+    <div class="loads">
+
+    </div>
+
+    <!-- header -->
+    <div class="dash">
+
+    </div>
+
+
+
+    <!-- one  -->
+    <div class="comcode1">
+        <div
+            class="rounded-lg w-full mx-auto    max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="flex relative justify-end z-30 px-4 pt-4">
+                <button id="dropdownButton" data-dropdown-toggle="dropdown"
+                    class="inline-block relative z-50 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+                    type="button">
+                    <span class="sr-only">Open dropdown</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
+                        </path>
+                    </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdown"
+                    class="z-50 absolute hidden   top-10 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2" aria-labelledby="dropdownButton">
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Export
+                                Data</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col items-center pb-10">
+                <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="./images/mohamed.jpg" alt="Bonnie image" />
+                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Mohamed Farj Allah </h5>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
+                <div class="flex mt-4 space-x-3 md:mt-6">
+                    <a href="#"
+                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                        friend</a>
+                    <a href="#"
+                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Message</a>
+                </div>
+            </div>
+        </div>
+        <div id="bgscreen" class="h-screen   w-full hidden   absolute top-0 right-0 z-20"></div>
+
+        <!-- js cod -->
+        <script>
+            let dropdown = document.getElementById('dropdown')
+            let bgscreen = document.getElementById('bgscreen')
+            document.getElementById('dropdownButton').addEventListener('click', show1)
+            bgscreen.addEventListener('click', show1)
+            function show1() {
+                dropdown.classList.toggle('hidden')
+                document.body.classList.toggle('overflow-y-hidden')
+                bgscreen.classList.toggle('hidden')
+            }
+        </script>
+    </div>
+    <!-- tow  -->
+    <div class="comcode1">
+        <div
+            class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20  w-full  mx-auto     border border-gray-200   dark:bg-gray-800 dark:border-gray-700">
+            <div class="flex justify-center md:justify-end -mt-16">
+                <img class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500" src="./images/mohamed.jpg">
+            </div>
+            <div>
+                <h2 class="text-gray-800 text-3xl font-semibold dark:text-white">Design Tools</h2>
+                <p class="mt-2 text-gray-600 dark:text-gray-500 ">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Quae dolores deserunt ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic,
+                    suscipit in a veritatis pariatur minus consequuntur!</p>
+            </div>
+            <div class="flex justify-end mt-4">
+                <a href="#" class="text-xl font-medium text-indigo-500">Mohamed Farj Allah</a>
+            </div>
+        </div>
+    </div>
+    <!-- three  -->
+    <div class="comcode1">
+        <div
+            class=" w-full rounded-lg py-3 flex px-6 justify-between flex-wrap  bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700 ">
+            <div class=" md:mx-0 mx-auto flex space-x-5">
+
+                <div>
+                    <img class="rounded-lg w-36 h-36" src="./images/mohamed.jpg" alt="Extra large avatar">
+
+                </div>
+                <div class="my-auto">
+                    <h1 class="text-gray-800 text-2xl font-semibold dark:text-white">Mohamed Farj Allah</h1>
+                    <div class="flex my-3 justify-between text-sm text-gray-500 dark:text-gray-400 text-center">
+                        <div class="">
+                            <h1 class="mb-2 text-xl font-medium text-gray-900 dark:text-white">100</h1>
+                            <h3>Followers</h3>
+                        </div>
+                        <div>
+                            <h1 class="mb-2 text-xl font-medium text-gray-900 dark:text-white">71</h1>
+                            <h3>Following</h3>
+                        </div>
+                        <div>
+                            <h1 class="mb-2 text-xl font-medium text-gray-900 dark:text-white">3</h1>
+                            <h3>Posts</h3>
+                        </div>
+                    </div>
+                    <div class="flex  -space-x-4">
+                        <img class="w-8 h-8w-8 border-2 border-white rounded-full dark:border-gray-800"
+                            src="./images/mohamed.jpg" alt="">
+                        <img class="w-8 h-8w-8 border-2 border-white rounded-full dark:border-gray-800"
+                            src="./images/mohamed.jpg" alt="">
+                        <img class="w-8 h-8w-8 border-2 border-white rounded-full dark:border-gray-800"
+                            src="./images/mohamed.jpg" alt="">
+                        <a class="flex items-center justify-center w-8 h-8 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800"
+                            href="#">+99</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mx-auto md:mx-0 my-auto">
+                <button type="button"
+                    class=" bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 text-gray-900 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Follow</button>
+
+                <button type="button"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Message</button>
+
+                <button id="dropdownButton" data-dropdown-toggle="dropdown"
+                    class="inline-block top-[7px]  relative z-50 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+                    type="button">
+
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
+                        </path>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <!-- four -->
+    <div class="comcode1">
+        <div class="flex items-center space-x-4">
+            <img class="w-10 h-10 rounded-full" src="./images/mohamed.jpg" alt="">
+            <div class="font-medium dark:text-white">
+                <div>Mohamed farj allah</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">hamodmohamed</div>
+            </div>
+        </div>
+
+        <!-- tow with hover  -->
+        <div class="relative" id="menu">
+            <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
+                data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer"
+                src="./images/mohamed.jpg" alt="User dropdown">
+
+            <!-- Dropdown menu -->
+            <div id="userDropdown"
+                class="z-10 absolute ani ltr:right-0 rtl:left-0 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                    <div>mohamed</div>
+                    <div class="font-medium truncate">name@gmail.com</div>
+                </div>
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                    </li>
+                </ul>
+                <div class="py-1">
+                    <a href="#"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                        out</a>
+                </div>
+                <style>
+                    #menu:hover #userDropdown {
+                        display: block;
+                    }
+
+                    .ani {
+                        animation: top .5s linear forwards;
+                    }
+
+                    @keyframes top {
+                        0% {
+                            top: 200%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100%;
+                            opacity: 1;
+                        }
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+    <!-- five -->
+    <div class="comcode1">
+        <div class='flex flex-col items-center justify-center  p-16 w-full'>
+            <div
+                class='user-list w-full max-w-lg mx-auto dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl shadow-xl flex flex-col py-4'>
+                <!--User row -->
+                <div
+                    class="user-row flex flex-col items-center justify-between cursor-pointer  p-4 duration-300 sm:flex-row sm:py-4 sm:px-8 hover:bg-[#f6f8f9]   dark:hover:bg-gray-700">
+                    <div class="user flex items-center text-center flex-col sm:flex-row sm:text-left">
+                        <div class="avatar-content mb-2.5 sm:mb-0 sm:mr-2.5">
+                            <img class="avatar w-20 h-20 rounded-full"
+                                src="https://randomuser.me/api/portraits/men/32.jpg" />
+                        </div>
+                        <div class="user-body flex flex-col mb-4 sm:mb-0 sm:mr-4">
+                            <a href="#" class="title font-medium no-underline">Wade Warren</a>
+                            <div class="skills flex flex-col">
+                                <span class="subtitle text-slate-500">Marketing Liaison</span>
+                                <span class="subtitle text-slate-500">Coordinator ?</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button content -->
+                    <div class="user-option mx-auto sm:ml-auto sm:mr-0">
+                        <button
+                            class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#6911e7] hover:bg-[#590acb] duration-300"
+                            type="button">Follow</button>
+                    </div>
+                    <!--Close Button content -->
+                </div>
+                <!--User row -->
+                <!--User row -->
+                <div
+                    class="user-row flex flex-col items-center justify-between cursor-pointer  p-4 duration-300 sm:flex-row sm:py-4 sm:px-8 hover:bg-[#f6f8f9]  dark:hover:bg-gray-700">
+                    <div class="user flex items-center text-center flex-col sm:flex-row sm:text-left">
+                        <div class="avatar-content mb-2.5 sm:mb-0 sm:mr-2.5">
+                            <img class="avatar w-20 h-20 rounded-full"
+                                src="https://randomuser.me/api/portraits/women/44.jpg" />
+                        </div>
+                        <div class="user-body flex flex-col mb-4 sm:mb-0 sm:mr-4">
+                            <a href="#" class="title font-medium no-underline">Loura Weber</a>
+                            <div class="skills flex flex-col">
+                                <span class="subtitle text-slate-500">Lead Manager</span>
+                                <span class="subtitle text-slate-500">Confidence</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button content -->
+                    <div class="user-option mx-auto sm:ml-auto sm:mr-0">
+                        <button
+                            class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#6911e7] hover:bg-[#590acb] duration-300"
+                            type="button">Follow</button>
+                    </div>
+                    <!--Close Button content -->
+                </div>
+                <!--User row -->
+                <!--User row -->
+                <div
+                    class="user-row flex flex-col items-center justify-between cursor-pointer  p-4 duration-300 sm:flex-row sm:py-4 sm:px-8 hover:bg-[#f6f8f9]  dark:hover:bg-gray-700">
+                    <div class="user flex items-center text-center flex-col sm:flex-row sm:text-left">
+                        <div class="avatar-content mb-2.5 sm:mb-0 sm:mr-2.5">
+                            <img class="avatar w-20 h-20 rounded-full"
+                                src="https://randomuser.me/api/portraits/men/46.jpg" />
+                        </div>
+                        <div class="user-body flex flex-col mb-4 sm:mb-0 sm:mr-4">
+                            <a href="#" class="title font-medium no-underline">Jane Cooper</a>
+                            <div class="skills flex flex-col">
+                                <span class="subtitle text-slate-500">Dog Trainer</span>
+                                <span class="subtitle text-slate-500">Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button content -->
+                    <div class="user-option mx-auto sm:ml-auto sm:mr-0">
+                        <button
+                            class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#6911e7] hover:bg-[#590acb] duration-300"
+                            type="button">Follow</button>
+                    </div>
+                    <!--Close Button content -->
+                </div>
+                <!--User row -->
+                <!--User row -->
+                <div
+                    class="user-row flex flex-col items-center justify-between cursor-pointer  p-4 duration-300 sm:flex-row sm:py-4 sm:px-8 hover:bg-[#f6f8f9]  dark:hover:bg-gray-700">
+                    <div class="user flex items-center text-center flex-col sm:flex-row sm:text-left">
+                        <div class="avatar-content mb-2.5 sm:mb-0 sm:mr-2.5">
+                            <img class="avatar w-20 h-20 rounded-full"
+                                src="https://randomuser.me/api/portraits/men/47.jpg" />
+                        </div>
+                        <div class="user-body flex flex-col mb-4 sm:mb-0 sm:mr-4">
+                            <a href="#" class="title font-medium no-underline">Guy Hawkins</a>
+                            <div class="skills flex flex-col">
+                                <span class="subtitle text-slate-500">Medical Assistant</span>
+                                <span class="subtitle text-slate-500">Assitant</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button content -->
+                    <div class="user-option mx-auto sm:ml-auto sm:mr-0">
+                        <button
+                            class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#6911e7] hover:bg-[#590acb] duration-300"
+                            type="button">Follow</button>
+                    </div>
+                    <!--Close Button content -->
+                </div>
+                <!--User row -->
+                <!--User row -->
+                <div
+                    class="user-row flex flex-col items-center justify-between cursor-pointer  p-4 duration-300 sm:flex-row sm:py-4 sm:px-8 hover:bg-[#f6f8f9]  dark:hover:bg-gray-700">
+                    <div class="user flex items-center text-center flex-col sm:flex-row sm:text-left">
+                        <div class="avatar-content mb-2.5 sm:mb-0 sm:mr-2.5">
+                            <img class="avatar w-20 h-20 rounded-full"
+                                src="https://randomuser.me/api/portraits/women/63.jpg" />
+                        </div>
+                        <div class="user-body flex flex-col mb-4 sm:mb-0 sm:mr-4">
+                            <a href="#" class="title font-medium no-underline">Julian Jill Brown</a>
+                            <div class="skills flex flex-col">
+                                <span class="subtitle text-slate-500">Web Designer</span>
+                                <span class="subtitle text-slate-500">Work under pressure</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button content -->
+                    <div class="user-option mx-auto sm:ml-auto sm:mr-0">
+                        <button
+                            class="btn inline-block select-none no-underline align-middle cursor-pointer whitespace-nowrap px-4 py-1.5 rounded text-base font-medium leading-6 tracking-tight text-white text-center border-0 bg-[#6911e7] hover:bg-[#590acb] duration-300"
+                            type="button">Follow</button>
+                    </div>
+                    <!--Close Button content -->
+                </div>
+                <!--User row -->
+
+                <a class="show-more block w-10/12 mx-auto py-2.5 px-4 text-center no-underline rounded  font-medium duration-300"
+                    href="#/">Show more members</a>
+            </div>
+        </div>
+    </div>
+    <!-- sex -->
+    <div class="comcode1">
+        <div class="w-full flex justify-around my-auto flex-wrap">
+            <div class="my-auto flex">
+                <img class="w-6   h-6 rounded-full" src="./images/mohamed.jpg" alt="Extra small avatar">
+                <h1 class="ml-2 my-auto dark:text-white text-black capitalize text-xs">small</h1>
+            </div>
+
+            <div class="my-auto flex">
+                <img class="w-10 h-10 rounded-full" src="./images/mohamed.jpg" alt="Medium avatar">
+                <h1 class="ml-2 my-auto dark:text-white text-black capitalize text-sm">mobile</h1>
+            </div>
+
+            <div class="my-auto flex">
+                <img class="w-20 h-20 rounded-full" src="./images/mohamed.jpg" alt="Large avatar">
+                <h1 class="ml-2 my-auto dark:text-white text-black capitalize text-base">desctop</h1>
+            </div>
+
+            <div class="my-auto flex">
+                <img class="rounded-full w-36 h-36" src="./images/mohamed.jpg" alt="Extra large avatar">
+                <h1 class="ml-2 my-auto dark:text-white text-black capitalize text-lg">large</h1>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="scrollbar2 dark:scrollbar2dark">
+
+
+
+        <!-- foote r -->
+
+        <div class="foot">
+
+        </div>
+
+
+        <script src="./js/db.js"></script>
+        <script src="./js/dachboard.js"></script>
+        <script src="./js/profile.js"></script>
+
+        <script>
+            dropdown = document.getElementById('dropdown')
+            bgscreen = document.getElementById('bgscreen')
+            document.getElementById('dropdownButton').addEventListener('click', show1)
+            bgscreen.addEventListener('click', show1)
+            function show1() {
+                dropdown.classList.toggle('hidden')
+                document.body.classList.toggle('overflow-y-hidden')
+                bgscreen.classList.toggle('hidden')
+            }
+        </script>
+</body>
+
+</html>

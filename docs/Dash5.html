@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark system ">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DashBoard 5</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style/tailwindcss.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+<body class="font-['Poppins',sans-serif] bg-[#333]">
+
+  <div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <section
+      class="navigation fixed bg-[#287bff] inset-5 w-20 border-l-[10px] border-solid border-[#287bff] rounded-[50px] overflow-hidden shadow-lg duration-300">
+      <ul class="absolute top-0 left-0 w-full">
+        <li class="relative w-full">
+          <a class="relative w-full flex text-white top-5 mb-10 bg-none" href="#">
+            <span class="icon relative block min-w-[60px] h-[60px] text-center leading-[70px]"><ion-icon
+                class="text-2xl" name="logo-apple"></ion-icon></span>
+            <span class="title block relative px-2.5 h-[60px] leading-[60px] text-start whitespace-nowrap">Brand
+              Ibrahim</span>
+          </a>
+        </li>
+        <li class="relative w-full hover:bg-white"
+          style="border-top-left-radius: 30px;border-bottom-left-radius: 30px;">
+          <a class="relative w-full flex text-white hover:text-[#222] duration-200" href="#">
+            <span class="icon relative block min-w-[60px] h-[60px] text-center leading-[70px]"><ion-icon
+                class="text-2xl" name="home-outline"></ion-icon></span>
+            <span
+              class="title block relative px-2.5 h-[60px] leading-[60px] text-start whitespace-nowrap">Dashboard</span>
+          </a>
+        </li>
+        <li class="relative w-full hover:bg-white"
+          style="border-top-left-radius: 30px;border-bottom-left-radius: 30px;">
+          <a class="relative w-full flex text-white hover:text-[#222] duration-200" href="#">
+            <span class="icon relative block min-w-[60px] h-[60px] text-center leading-[70px]"><ion-icon
+                class="text-2xl" name="person-outline"></ion-icon></span>
+            <span
+              class="title block relative px-2.5 h-[60px] leading-[60px] text-start whitespace-nowrap">Customer</span>
+          </a>
+        </li>
+        <li class="relative w-full hover:bg-white"
+          style="border-top-left-radius: 30px;border-bottom-left-radius: 30px;">
+          <a class="relative w-full flex text-white hover:text-[#222] duration-200" href="#">
+            <span class="icon relative block min-w-[60px] h-[60px] text-center leading-[70px]"><ion-icon
+                class="text-2xl" name="chatbubble-outline"></ion-icon></span>
+            <span
+              class="title block relative px-2.5 h-[60px] leading-[60px] text-start whitespace-nowrap">Messages</span>
+          </a>
+        </li>
+        <li class="relative w-full hover:bg-white"
+          style="border-top-left-radius: 30px;border-bottom-left-radius: 30px;">
+          <a class="relative w-full flex text-white hover:text-[#222] duration-200" href="#">
+            <span class="icon relative block min-w-[60px] h-[60px] text-center leading-[70px]"><ion-icon
+                class="text-2xl" name="help-outline"></ion-icon></span>
+            <span class="title block relative px-2.5 h-[60px] leading-[60px] text-start whitespace-nowrap">Help</span>
+          </a>
+        </li>
+        <li class="relative w-full hover:bg-white"
+          style="border-top-left-radius: 30px;border-bottom-left-radius: 30px;">
+          <a class="relative w-full flex text-white hover:text-[#222] duration-200" href="#">
+            <span class="icon relative block min-w-[60px] h-[60px] text-center leading-[70px]"><ion-icon
+                class="text-2xl" name="settings-outline"></ion-icon></span>
+            <span
+              class="title block relative px-2.5 h-[60px] leading-[60px] text-start whitespace-nowrap">Setting</span>
+          </a>
+        </li>
+        <li class="relative w-full hover:bg-white"
+          style="border-top-left-radius: 30px;border-bottom-left-radius: 30px;">
+          <a class="relative w-full flex text-white hover:text-[#222] duration-200" href="#">
+            <span class="icon relative block min-w-[60px] h-[60px] text-center leading-[70px]"><ion-icon
+                class="text-2xl" name="lock-closed-outline"></ion-icon></span>
+            <span
+              class="title block relative px-2.5 h-[60px] leading-[60px] text-start whitespace-nowrap">Password</span>
+          </a>
+        </li>
+        <li class="relative w-full hover:bg-white"
+          style="border-top-left-radius: 30px;border-bottom-left-radius: 30px;">
+          <a class="relative w-full flex text-white hover:text-[#222] duration-200" href="#">
+            <span class="icon relative block min-w-[60px] h-[60px] text-center leading-[70px]"><ion-icon
+                class="text-2xl" name="log-out-outline"></ion-icon></span>
+            <span class="title block relative px-2.5 h-[60px] leading-[60px] text-start whitespace-nowrap">Sign
+              Out</span>
+          </a>
+        </li>
+      </ul>
+      <div class="toggle"></div>
+    </section>
+    <style>
+      .toggle {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .toggle::before,
+      .toggle::after {
+        content: '';
+        position: absolute;
+        width: 26px;
+        height: 3px;
+        border-radius: 4px;
+        background-color: #365fa1;
+        transform: translateY(-5px);
+        transition: 1s;
+      }
+
+      .toggle::after {
+        transform: translateY(5px);
+      }
+
+      .navigation.active .toggle::before {
+        transform: translateY(0px) rotate(-405deg);
+      }
+
+      .navigation.active .toggle::after {
+        transform: translateY(0px) rotate(225deg);
+      }
+
+      .navigation.active {
+        width: 300px;
+        border-radius: 20px;
+      }
+
+      .navigation ul li:not(:first-child):hover::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-bottom-right-radius: 20px;
+        background: transparent;
+        box-shadow: 7.5px 7.5px 0 7.5px #fff;
+      }
+
+      .navigation ul li:not(:first-child):hover::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-top-right-radius: 20px;
+        background: transparent;
+        box-shadow: 7.5px -7.5px 0 7.5px #fff;
+      }
+    </style>
+
+    <script>
+      let navigation = document.querySelector('.navigation');
+      let toggle = document.querySelector('.toggle');
+
+      toggle.addEventListener('click', () => {
+        navigation.classList.toggle('active')
+      })
+    </script>
+  </div>
+
+</body>
+</html>

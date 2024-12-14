@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Login7 </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./styles/logIn.css" />
+</head>
+
+<body class="font-['Poppins',sans-serif] justify-center items-center min-h-screen flex bg-[#1c2630]">
+
+    <form class="dark:bg-[#29313c] bg-[#f1f1f1] py-10 md:py-[60px] px-10 md:px-20 text-center flex flex-col rounded-xl">
+        <h2 class="dark:text-white text-gray-900 uppercase font-medium text-xl tracking-widest mb-12">New Account</h2>
+        <div class="inputBox relative w-[300px] mb-7 md:mb-10">
+            <input
+                class="w-full relative py-2.5 duration-200 bg-transparent outline-none border-b-2 border-solid border-b-[#999] dark:text-white text-gray-700 text-base tracking-[0.15em]"
+                type="text" required>
+            <label class="absolute left-0 py-2.5 pointer-events-none uppercase text-gray-800 dark:text-[#999]">User
+                Name</label>
+        </div>
+        <div class="inputBox relative w-[300px] mb-7 md:mb-10">
+            <input
+                class="w-full relative py-2.5 duration-200 bg-transparent outline-none border-b-2 border-solid border-b-[#999] dark:text-white text-gray-700 text-base tracking-[0.15em]"
+                type="email" required>
+            <label
+                class="absolute left-0 py-2.5 pointer-events-none uppercase text-gray-800 dark:text-[#999]">Email</label>
+        </div>
+        <div class="inputBox relative w-[300px] mb-7 md:mb-10">
+            <input
+                class="w-full relative py-2.5 duration-200 bg-transparent outline-none border-b-2 border-solid border-b-[#999] dark:text-white text-gray-700 text-base tracking-[0.15em]"
+                type="password" required>
+            <label class="absolute left-0 py-2.5 pointer-events-none uppercase text-gray-800 dark:text-[#999]">Create
+                &nbsp;
+                Password</label>
+        </div>
+        <div class="inputBox relative w-[300px] mb-7 md:mb-10">
+            <input
+                class="w-full relative py-2.5 duration-200 bg-transparent outline-none border-b-2 border-solid border-b-[#999] dark:text-white text-gray-700 text-base tracking-[0.15em]"
+                type="password" required>
+            <label class="absolute left-0 py-2.5 pointer-events-none uppercase text-gray-800 dark:text-[#999]">Confirm
+                &nbsp;
+                Password</label>
+        </div>
+        <div class="inputBox relative w-[300px] mb-7 md:mb-10">
+            <input
+                class="bg-[var(--clr)] cursor-pointer w-full font-semibold py-2.5 duration-200 border-none outline-none text-[#1c2630] text-lg uppercase tracking-widest rounded-full hover:tracking-[0.2em] focus:tracking-[0.2em] focus:text-[#363535]"
+                type="submit" value="Create">
+        </div>
+        <p class="dark:text-white text-gray-900 uppercase">Already have an account ? <a
+                class="text-[var(--clr)] font-medium hover:underline" href="#">Login</a></p>
+    </form>
+
+    <script>
+        let label = document.querySelectorAll('label').forEach(label => {
+            label.innerHTML = label.innerText.split('').map((letters, i) => `<span style="transition-delay: ${i * 50}ms;">${letters}</span>`).join('');
+        })
+    </script>
+</body>
+
+</html>

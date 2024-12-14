@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Login8 </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./styles/logIn.css" />
+
+    <style>
+        .colors span {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background: var(--col);
+            margin: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .colors span.active {
+            scale: 1.5;
+            border: 2px solid #333;
+            transition: 200ms;
+        }
+    </style>
+</head>
+
+<body class="font-['Poppins',sans-serif] justify-center items-center min-h-screen flex bg-[#1dd1a1] duration-200">
+
+    <div class="logIn p-12 bg-white w-[400px] flex flex-col gap-5 shadow-lg rounded-md">
+        <h2 class="font-medium border-l-[12px] border-[#1dd1a1] duration-200 pl-2.5 text-[#333] leading-6 text-2xl"
+            id="txt">Login</h2>
+        <div class="inputbox">
+            <input required
+                class="w-full relative py-2.5 px-4 outline-none border-[2px] border-[#555] text-[#333] text-base"
+                type="text" placeholder="Username">
+        </div>
+
+        <div class="inputbox">
+            <input required
+                class="w-full relative py-2.5 px-4 outline-none border-[2px] border-[#555] text-[#333] text-base"
+                type="password" placeholder="Password">
+        </div>
+
+        <div class="inputbox">
+            <input
+                class="w-full relative py-2.5 px-4 outline-none border-none bg-[#1dd1a1] duration-200 text-white text-lg font-medium cursor-pointer rounded-md"
+                type="submit" value="Login" id="Btn">
+        </div>
+
+        <div class="group flex justify-between">
+            <a class="text-[#333]" href="#">Forget Password</a>
+            <a class="text-[#333] font-medium underline hover:no-underline duration-200 hover:text-[#444645]"
+                href="#">SignUp</a>
+        </div>
+
+        <div class="colors absolute right-0 p-2.5 bg-white flex justify-center items-center flex-col rounded-md">
+            <span class="active" onclick="ChangeColor('#1dd1a1')" style="--col: #1dd1a1;"></span>
+            <span onclick="ChangeColor('#ff6b6b')" style="--col: #ff6b6b;"></span>
+            <span onclick="ChangeColor('#2e86de')" style="--col: #2e86de;"></span>
+            <span onclick="ChangeColor('#f368e0')" style="--col: #f368e0;"></span>
+            <span onclick="ChangeColor('#ff9f43')" style="--col: #ff9f43;"></span>
+        </div>
+    </div>
+
+    <script>
+        let Btn = document.getElementById('Btn'),
+            txt = document.getElementById('txt');
+        function ChangeColor(color) {
+            document.body.style.background = color;
+            Btn.style.background = color;
+            txt.style.borderColor = color;
+
+            document.querySelectorAll('span').forEach(function (item) {
+                item.classList.remove('active');
+            })
+            event.target.classList.add('active');
+        }
+
+    </script>
+
+</body>
+
+</html>

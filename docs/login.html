@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark system ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/tailwindcss.css">
+
+
+    <link rel="stylesheet" href="codemirror/codemirror.css">
+    <link rel="stylesheet" href="./codemirror/dracula.css">
+    <link rel="stylesheet" href="./codemirror/xq-light.css">
+    <script src="./codemirror/codemirror.js"></script>
+    <script src="./codemirror/xml.js"></script>
+
+</head>
+
+<body class="bg-[#f5f8fa] scrollbar  relative dark:bg-[#151521] ">
+
+    <div class="loads"></div>
+    <div class="dash"></div>
+
+    <!-- one  -->
+    <div class="comcode1">
+        <div class="w-full">
+            <div
+                class="relative mt-[7%] flex w-full max-w-lg mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-7xl">
+                <div class="w-full overflow-hidden px-6 py-8 md:px-8 lg:w-1/2 relative " id="login">
+                    <div class="flex justify-center mx-auto">
+                        <img class="w-auto h-7 sm:h-8" src="./images/logo2.svg" alt="">
+                    </div>
+
+                    <p class="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
+                        Welcome back!
+                    </p>
+
+                    <a href="#"
+                        class="flex items-center justify-center mt-4 text-gray-600 transition-all duration-200 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 hover:scale-105 dark:hover:bg-gray-600">
+                        <div class="px-4 py-2">
+                            <svg class="w-6 h-6" viewBox="0 0 40 40">
+                                <path
+                                    d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
+                                    fill="#FFC107" />
+                                <path
+                                    d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z"
+                                    fill="#FF3D00" />
+                                <path
+                                    d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z"
+                                    fill="#4CAF50" />
+                                <path
+                                    d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
+                                    fill="#1976D2" />
+                            </svg>
+                        </div>
+                        <span class="w-5/6 px-4 py-3 font-bold text-center">Sign in with Google</span>
+                    </a>
+
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
+
+                        <a href="#"
+                            class="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">or
+                            login
+                            with email</a>
+
+                        <span class="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+                    </div>
+                    <div id="meseror">
+
+                    </div>
+                    <div class="mt-4">
+                        <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                            for="LoggingEmailAddress">Email Address</label>
+                        <input id="logemail"
+                            class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                            type="email" />
+                        <p class="text-red-500 text-xs italic mt-2" id="comem"></p>
+
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="flex justify-between">
+                            <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                for="loggingPassword">Password</label>
+                            <a href="#" class="text-xs text-gray-500 dark:text-gray-300 hover:underline">Forget
+                                Password?</a>
+                        </div>
+
+                        <input id="logpas"
+                            class="block    w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                            type="password" />
+                        <p class="text-red-500 text-xs italic mt-2" id="compas"></p>
+
+
+                    </div>
+
+
+                    <div class="mt-6">
+                        <button id="but"
+                            class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                            Sign In
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+
+                        <a href="#" class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
+                            id="signup">or sign up</a>
+
+                        <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+                    </div>
+                </div>
+
+
+                <div class="w-[10%] top-[30%] right-[45%] hidden lg:block z-10 absolute">
+                    <img src="./images/auth-decoration.png" alt="">
+                </div>
+                <!-- 2 -->
+                <div class="w-full px-6 py-8 md:px-8 lg:w-1/2 hidden" id="slid2">
+                    <div class="flex justify-center mx-auto">
+                        <img class="w-auto h-7 sm:h-8" src="https://merakiui.com/images/logo.svg" alt="">
+                    </div>
+
+                    <p class="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
+                        Create Account
+                    </p>
+
+
+
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
+
+                        <a href="#"
+                            class="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">Create
+                            Account</a>
+
+                        <span class="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="mt-4 w-[48%]">
+                            <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                for="LoggingEmailAddress">First Name</label>
+                            <input id="Firstname"
+                                class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                                type="text" />
+                            <p class="text-red-500 text-xs italic mt-2" id="comf"></p>
+
+                        </div>
+
+                        <div class="mt-4 w-[48%]">
+                            <div class="flex justify-between">
+                                <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                    for="loggingPassword">Secend Name</label>
+                            </div>
+
+                            <input id="secendname"
+                                class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                                type="text" />
+                            <p class="text-red-500 text-xs italic mt-2" id="coms"></p>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                            for="LoggingEmailAddress">Create Email</label>
+                        <input id="emailadress"
+                            class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                            type="email" />
+                        <p class="text-red-500 text-xs italic mt-2" id="come"></p>
+
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="mt-4 w-[48%]">
+                            <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                for="LoggingEmailAddress">Password</label>
+                            <input id="pass1"
+                                class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                                type="password" />
+                            <p class="text-red-500 text-xs italic mt-2" id="comi"></p>
+
+                        </div>
+
+                        <div class="mt-4 w-[48%]">
+                            <div class="flex justify-between">
+                                <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                    for="loggingPassword">confim Password</label>
+
+                            </div>
+
+                            <input id="pass2"
+                                class="block w-full  px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                                type="password" />
+                            <p class="text-red-500 text-xs italic mt-2" id="comp"></p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <button id="sub1"
+                            class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                            Submit
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+
+                        <a href="#" class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
+                            id="signin">or sign in</a>
+
+                        <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+                    </div>
+                </div>
+                <div class="hidden bg-cover b lg:block lg:w-1/2"
+                    style="background-image: url('./images/auth-image.jpg');"></div>
+
+            </div>
+            <style>
+                .b {
+                    background-position: center center;
+                }
+
+                .op {
+                    animation: ops .5s ease-in-out forwards;
+                }
+
+                @keyframes ops {
+                    0% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            </style>
+            <script>
+                // show sign up and sign up
+                document.getElementById('signup').addEventListener('click', signup)
+                function signup() {
+                    document.getElementById('login').classList.toggle('hidden')
+                    document.getElementById('slid2').classList.toggle('hidden')
+                    document.getElementById('login').classList.add('op')
+                    document.getElementById('slid2').classList.add('op')
+                }
+                document.getElementById('signin').addEventListener('click', signup)
+                // sign in 
+                let logemail = document.getElementById('logemail')
+                let logpas = document.getElementById('logpas')
+                logpas.onfocus = () => {
+                    document.getElementById('meseror').innerHTML = ''
+                }
+                logemail.onfocus = () => {
+                    document.getElementById('meseror').innerHTML = ''
+                }
+                document.getElementById('but').addEventListener('click', check)
+                function check() {
+                    let logemail = document.getElementById('logemail')
+                    let logpas = document.getElementById('logpas')
+
+                    if ((logpas.value.trim() == '' || logemail.value.trim() == '')) {
+                        if (logemail.value.trim() == '') {
+                            printerror('logemail', 'comem', 'Please the Email')
+                        }
+                        if (logpas.value.trim() == '') {
+                            printerror('logpas', 'compas', 'Please Enter a password.')
+                        }
+                    }
+                }
+                // sing in 
+                document.getElementById('sub1').addEventListener('click', () => {
+                    takedata()
+                })
+                function takedata() {
+                    localStorage.id = 0;
+                    let Firstname = document.getElementById('Firstname')
+                    let secendname = document.getElementById('secendname')
+                    let emailadress = document.getElementById('emailadress')
+                    let pass1 = document.getElementById('pass1')
+                    let pass2 = document.getElementById('pass2')
+                    if (Firstname.value.trim() == '') {
+                        printerror('Firstname', 'comf', 'Enter Your first Name')
+                    }
+                    else {
+                        if (secendname.value.trim() == '') {
+                            printerror('secendname', 'coms', 'Enter Your secend Name')
+                        }
+                        else {
+                            if ((emailadress.value.includes('@')) && (emailadress.value.includes('.'))) {
+                                if (pass1.value.length >= 8) {
+                                    if (pass1.value != pass2.value) {
+                                        printerror('pass2', 'comp', 'Please Enter a password.')
+                                    }
+                                }
+                                else {
+                                    printerror('pass1', 'comi', 'must the legth of the  password more than 8')
+                                }
+                            }
+                            else {
+                                printerror('emailadress', 'come', 'Create Email address')
+                            }
+                        }
+                    }
+                }
+                function printerror(id, idd, mesage) {
+                    let id1 = document.getElementById(id)
+                    id1.classList.add('dark:border-red-500')
+                    id1.classList.add('border-red-500')
+                    document.getElementById(idd).innerHTML = mesage
+                    id1.onfocus = () => {
+                        id1.classList.remove('dark:border-red-500')
+                        id1.classList.remove('border-red-500')
+                        document.getElementById(idd).innerHTML = ''
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+
+
+    <!-- tow  -->
+    <div class="comcode1">
+        <div class="w-full mx-auto">
+            <div class="flex justify-center px-6 my-12">
+                <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+                    <div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+                        style="background-image: url('https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=600')">
+                    </div>
+                    <div class="w-full lg:w-7/12 dark:bg-gray-900 bg-white p-5 rounded-lg lg:rounded-l-none">
+                        <h3 class="pt-4 text-2xl text-black dark:text-white text-center">Create an Account!</h3>
+                        <form class="px-8 pt-6 pb-8 mb-4 rounded">
+                            <div class="mb-4 md:flex md:justify-between">
+                                <div class="mb-4 md:mr-2 md:mb-0">
+                                    <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-white/70"
+                                        for="firstName">
+                                        First Name
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white/70 border rounded shadow appearance-none dark:bg-gray-800 focus:outline-none focus:border-gray-500"
+                                        id="firstName" type="text" placeholder="First Name" />
+                                </div>
+                                <div class="md:ml-2">
+                                    <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-white/70"
+                                        for="lastName">
+                                        Last Name
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white/70 border rounded shadow dark:bg-gray-800 appearance-none focus:outline-none focus:border-gray-500"
+                                        id="lastName" type="text" placeholder="Last Name" />
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-white/70"
+                                    for="email">
+                                    Email
+                                </label>
+                                <input
+                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white/70 border rounded shadow dark:bg-gray-800 appearance-none focus:outline-none focus:border-gray-500"
+                                    id="email" type="email" placeholder="Email" />
+                            </div>
+                            <div class="mb-4 md:flex md:justify-between">
+                                <div class="mb-4 md:mr-2 md:mb-0">
+                                    <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-white/70"
+                                        for="password">
+                                        Password
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white/70 border border-red-500 rounded shadow dark:bg-gray-800 appearance-none focus:outline-none focus:border-gray-500"
+                                        id="password" type="password" placeholder="******************" />
+                                    <p class="text-xs italic text-red-500">Please choose a password.</p>
+                                </div>
+                                <div class="md:ml-2">
+                                    <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-white/70"
+                                        for="c_password">
+                                        Confirm Password
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white/70 border rounded shadow dark:bg-gray-800 appearance-none focus:outline-none focus:border-gray-500"
+                                        id="c_password" type="password" placeholder="******************" />
+                                </div>
+                            </div>
+                            <div class="mb-6 text-center">
+                                <button
+                                    class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-2xl hover:bg-blue-700 focus:outline-none focus:border-gray-500"
+                                    type="button">
+                                    Register Account
+                                </button>
+                            </div>
+                            <hr class="mb-6 border-t" />
+                            <div class="text-center">
+                                <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                                    href="#">
+                                    Forgot Password?
+                                </a>
+                            </div>
+                            <div class="text-center">
+                                <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                                    href="./index.html">
+                                    Already have an account? Login!
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- three  -->
+    <div class="comcode1">
+        <div class="relative h-full flex items-center justify-center sm:overflow-visible overflow-hidden ">
+            <div class="w-[430px] h-[520px] absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div class="h-[200px] w-[200px] z-20 absolute rounded-full -left-20 -top-20"
+                    style="background: linear-gradient(#1845ad, #23a2f6);"></div>
+                <div class="h-[200px] w-[200px] absolute z-20 rounded-full -bottom-20 -right-8"
+                    style="background: linear-gradient(to right, #ff512f, #f09819);"></div>
+            </div>
+            <div
+                class="jj rounded-xl    contents  backdrop-blur-md border-s border-solid dark:border-[#ffffff1a]      ">
+                <form
+                    class=" dark:text-[#ffffff] rounded-xl      backdrop-blur-md border-s border-solid dark:border-[#ffffff1a]   text-black relative z-30  bg-[#ffffff6f]  dark:bg-[#ffffff21] tracking-wider font-sans py-12 md:px-9 px-4">
+                    <h3 class="font-medium text-center w-full md:text-[32px] text-lg md:leading-10">Login Here</h3>
+
+                    <label class="block mt-7 text-base font-medium" for="username">Username</label>
+                    <input
+                        class="w-full px-3  py-2 mb-3 text-sm leading-tight dark:placeholder:text-[#e5e5e5] placeholder:text-black text-gray-700 dark:text-white/70 border rounded shadow dark:bg-[#ffffff12]  appearance-none focus:outline-none focus:border-gray-500"
+                        id="email" type="email" placeholder="Email" />
+
+                    <label class="block mt-7 text-base font-medium" for="password">Password</label>
+                    <input
+                        class="w-full px-3  py-2 mb-3 text-sm leading-tight dark:placeholder:text-[#e5e5e5] placeholder:text-black text-gray-700 dark:text-white/70 border rounded shadow dark:bg-[#ffffff12]  appearance-none focus:outline-none focus:border-gray-500"
+                        id="email" type="password" placeholder="passwoed" />
+
+                    <button
+                        class="mt-12 w-full bg-white hover:bg-white/90 duration-200 text-black py-4 text-lg font-semibold rounded-md cursor-pointer focus:outline-white/5">Log
+                        In</button>
+                    <div class="social mt-7 flex">
+                        <a href="#"
+                            class="w-[150px] text-gray-700 py-3 flex justify-center items-center dark:text-white/70 border rounded shadow dark:bg-[#ffffff12]  appearance-none focus:outline-none focus:border-gray-500">
+                            <i class="mr-1 fab fa-google"></i> Google</a>
+                        <a href="#"
+                            class="w-[150px] ml-6 text-gray-700 py-3 flex justify-center items-center dark:text-white/70 border rounded shadow dark:bg-[#ffffff12]  appearance-none focus:outline-none focus:border-gray-500">
+                            <i class="mr-1 fab fa-facebook"></i> facebook</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- four  -->
+    <div class="comcode1">
+        <div class="flex justify-center items-center w-full">
+            <div class="Box relative w-[380px] h-[420px] bg-[#1c1c1c] rounded-lg overflow-hidden">
+                <span class="borderLine absolute top-0 inset-0"></span>
+                <form class="absolute inset-1 bg-slate-200 dark:bg-[#222] py-12 px-10 rounded-lg z-10 flex flex-col">
+                    <h2 class="dark:text-white text-slate-800 font-medium text-center leading-5 text-2xl">Sign in</h2>
+                    <div class="inputBox relative w-[300px] mt-9">
+                        <input
+                            class="relative w-full pt-5 px-2.5 pb-2.5 bg-transparent outline-none shadow-none text-[#23242a] text-base tracking-wider z-10 duration-200 border-none"
+                            type="text" required="required">
+                        <span
+                            class="absolute left-0 pt-5 pb-2.5 pointer-events-none dark:text-[#8f8f8f] text-slate-900 text-base tracking-wider duration-200 ">Username</span>
+                        <i
+                            class="absolute left-0 bottom-0 w-full h-0.5 bg-white rounded duration-200 pointer-events-none"></i>
+                    </div>
+
+                    <div class="inputBox relative w-[300px] mt-9">
+                        <input
+                            class="relative w-full pt-5 px-2.5 pb-2.5 bg-transparent outline-none shadow-none text-[#23242a] text-base tracking-wider z-10 duration-200 border-none"
+                            type="password" required="required">
+                        <span
+                            class="absolute left-0 pt-5 pb-2.5 pointer-events-none text-base tracking-wider duration-200 dark:text-[#8f8f8f] text-slate-900 ">Password</span>
+                        <i
+                            class="absolute left-0 bottom-0 w-full h-0.5 bg-white rounded duration-200 pointer-events-none"></i>
+                    </div>
+
+                    <div class="links flex justify-between">
+                        <a class="my-2.5  dark:text-[#8f8f8f] text-slate-900 text-xs duration-200 hover:text-black"
+                            href="#">Forget Password</a>
+                        <a class="my-2.5 dark:text-[#8f8f8f] text-slate-900 text-xs duration-200" href="#">SignUp</a>
+                    </div>
+                    <input
+                        class=" w-[100px] mt-8 rounded py-2 px-6 bg-white cursor-pointer outline-none  text-[#23242a] font-semibold text-[0.9em] tracking-wider duration-200 border-none active:opacity-80"
+                        type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <style>
+            .Box form .inputBox input:valid~span,
+            .Box form .inputBox input:focus~span {
+                color: white;
+                font-size: 0.75em;
+                transform: translateY(-34px);
+            }
+
+            .Box form .inputBox input:valid~i,
+            .Box form .inputBox input:focus~i {
+                height: 44px;
+            }
+
+            .Box::before,
+            .Box::after,
+            .borderLine::before,
+            .borderLine::after {
+                content: "";
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 380px;
+                height: 420px;
+                background: linear-gradient(0deg,
+                        transparent,
+                        transparent,
+                        #45f3ff,
+                        #45f3ff,
+                        #45f3ff);
+                z-index: 1;
+                transform-origin: bottom right;
+                animation: animate 6s linear infinite;
+            }
+
+            .Box::after {
+                animation-delay: -3s;
+            }
+
+            .borderLine::before,
+            .borderLine::after {
+                background: linear-gradient(0deg,
+                        transparent,
+                        transparent,
+                        #ff2770,
+                        #ff2770,
+                        #ff2770);
+                animation-delay: -1.5s;
+            }
+
+            .borderLine::after {
+                animation-delay: -4.5s;
+            }
+
+            /* animation for all lines round of div */
+            @keyframes animate {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </div>
+
+    <!-- five  -->
+    <div class="comcode1">
+        <section class="relative w-full h-screen flex">
+            <div class="imgBox6 md:relative  md:h-screen w-full absolute inset-0">
+                <img class="absolute top-0 left-0 w-full h-full object-cover" src="./images/auth-image.jpg">
+            </div>
+
+            <div class="contectBox  flex justify-center items-center md:w-full md:z-0 w-full z-10">
+                <div
+                    class="formBx md:h-screen w-full p-10 md:m-0   m-12 md:p-12 opacity-95 dark:bg-gray-800 bg-[rgba(255,255,255,.8)]">
+                    <h2
+                        class="underAfter text-[#607d8b] font-semibold text-2xl uppercase mb-5 tracking-[1px] inline-block">
+                        Login</h2>
+                    <form>
+                        <div class="inputsBx mb-5">
+                            <span
+                                class="text-base mb-1.5 inline-block text-[#607d8b] font-light tracking-[1px]">Username</span>
+                            <input
+                                class="w-full py-2.5 px-5 outline-none font-normal border border-solid border-[#607d8b] text-base tracking-[1px] text-[#607d8b] bg-transparent rounded-3xl"
+                                type="text">
+                        </div>
+                        <div class="inputsBx mb-5">
+                            <span
+                                class="text-base mb-1.5 inline-block text-[#607d8b] font-light tracking-[1px]">Password</span>
+                            <input
+                                class="w-full py-2.5 px-5 outline-none font-normal border border-solid border-[#607d8b] text-base tracking-[1px] text-[#607d8b] bg-transparent rounded-3xl"
+                                type="password">
+                        </div>
+                        <div class="remember mb-2.5 text-[#607d8b] font-normal text-sm">
+                            <label class="flex items-center justify-start"><input class="mr-2" type="checkbox">Remember
+                                me</label>
+                        </div>
+                        <div class="inputsBx mb-5">
+                            <input
+                                class="w-full py-2.5 px-5 outline-none font-medium cursor-pointer border-none text-base tracking-[1px] text-white bg-[#ff4584] hover:bg-[#f53677] duration-200 rounded-3xl"
+                                type="submit" value="Sign in">
+                        </div>
+                        <div class="inputsBx mb-5">
+                            <p class="text-[#607d8b] md:text-base text-sm">Don't have an account? <a
+                                    class="text-[#ff4584] hover:text-red-700 duration-200 underline" href="#">Sign
+                                    Up</a>
+                            </p>
+                        </div>
+                    </form>
+                    <h3 class="text-[#607d8b] text-center mt-6 md:mt-16 mx-0 mb-2.5 font-medium">Login with social media
+                    </h3>
+                    <ul class="iconsSocial flex items-center justify-center">
+                        <svg class="bg-[#607d8b] hover:bg-[#ff4584] fill-white w-12 h-12 flex justify-center items-center text-2xl p-2 duration-200 rounded-full mx-2 cursor-pointer"
+                            xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                        </svg>
+                        <svg class="bg-[#607d8b] hover:bg-[#ff4584] fill-white w-12 h-12 flex justify-center items-center text-2xl p-2 duration-200 rounded-full mx-2 cursor-pointer"
+                            xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                        </svg>
+                        <svg class="bg-[#607d8b] hover:bg-[#ff4584] fill-white w-12 h-12 flex justify-center items-center text-2xl p-2 duration-200 rounded-full mx-2 cursor-pointer"
+                            xmlns="http://www.w3.org/2000/svg" height="1em"
+                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                        </svg>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .imgBox6::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                background: linear-gradient(225deg, #e91e63, #03a9f4);
+                mix-blend-mode: screen;
+            }
+
+            .underAfter::after {
+                content: "";
+                background-color: #ff4584;
+                margin-top: 4px;
+                height: 2px;
+                border-radius: 5px;
+                width: 55px;
+                display: block;
+            }
+        </style>
+    </div>
+    <!-- footer  -->
+
+
+    <div class="foot">
+
+    </div>
+
+    <script src="./js/db.js"></script>
+    <script src="./js/dachboard.js"></script>
+    <script src="./js/profile.js"></script>
+
+    <style>
+        .b {
+            background-position: center center;
+        }
+
+        .op {
+            animation: ops .5s ease-in-out forwards;
+        }
+
+        @keyframes ops {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        // show sign up and sign up
+        document.getElementById('signup').addEventListener('click', signup)
+        function signup() {
+            document.getElementById('login').classList.toggle('hidden')
+            document.getElementById('slid2').classList.toggle('hidden')
+            document.getElementById('login').classList.add('op')
+            document.getElementById('slid2').classList.add('op')
+        }
+        document.getElementById('signin').addEventListener('click', signup)
+        // sign in 
+        logemail = document.getElementById('logemail')
+        logpas = document.getElementById('logpas')
+        logpas.onfocus = () => {
+            document.getElementById('meseror').innerHTML = ''
+        }
+        logemail.onfocus = () => {
+            document.getElementById('meseror').innerHTML = ''
+        }
+        document.getElementById('but').addEventListener('click', check)
+        function check() {
+            logemail = document.getElementById('logemail')
+            logpas = document.getElementById('logpas')
+
+            if ((logpas.value.trim() == '' || logemail.value.trim() == '')) {
+                if (logemail.value.trim() == '') {
+                    printerror('logemail', 'comem', 'Please the Email')
+                }
+                if (logpas.value.trim() == '') {
+                    printerror('logpas', 'compas', 'Please Enter a password.')
+                }
+            }
+        }
+        // sing in 
+        document.getElementById('sub1').addEventListener('click', () => {
+            takedata()
+        })
+        function takedata() {
+            localStorage.id = 0;
+            Firstname = document.getElementById('Firstname')
+            secendname = document.getElementById('secendname')
+            emailadress = document.getElementById('emailadress')
+            pass1 = document.getElementById('pass1')
+            pass2 = document.getElementById('pass2')
+            if (Firstname.value.trim() == '') {
+                printerror('Firstname', 'comf', 'Enter Your first Name')
+            }
+            else {
+                if (secendname.value.trim() == '') {
+                    printerror('secendname', 'coms', 'Enter Your secend Name')
+                }
+                else {
+                    if ((emailadress.value.includes('@')) && (emailadress.value.includes('.'))) {
+                        if (pass1.value.length >= 8) {
+                            if (pass1.value != pass2.value) {
+                                printerror('pass2', 'comp', 'Please Enter a password.')
+                            }
+                        }
+                        else {
+                            printerror('pass1', 'comi', 'must the legth of the  password more than 8')
+                        }
+                    }
+                    else {
+                        printerror('emailadress', 'come', 'Create Email address')
+                    }
+                }
+            }
+        }
+        function printerror(id, idd, mesage) {
+            id1 = document.getElementById(id)
+            id1.classList.add('dark:border-red-500')
+            id1.classList.add('border-red-500')
+            document.getElementById(idd).innerHTML = mesage
+            id1.onfocus = () => {
+                id1.classList.remove('dark:border-red-500')
+                id1.classList.remove('border-red-500')
+                document.getElementById(idd).innerHTML = ''
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

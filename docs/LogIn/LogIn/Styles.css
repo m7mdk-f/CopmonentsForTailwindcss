@@ -1,0 +1,23 @@
+/* code for login7 */
+:root {
+  --clr: #0ab3ff;
+}
+
+.inputBox input:focus,
+.inputBox input:valid {
+  border-bottom: 2px solid var(--clr);
+}
+
+.inputBox label span {
+  position: relative;
+  display: inline-flex;
+  letter-spacing: 0.05em;
+  transition: ease-in-out 0.2s;
+}
+
+.inputBox input:focus~label span,
+.inputBox input:valid~label span {
+  color: var(--clr);
+  letter-spacing: 0.15em;
+  transform: translateY(-25px);
+}

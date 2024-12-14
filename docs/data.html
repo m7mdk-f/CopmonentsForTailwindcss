@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark system">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/tailwindcss.css" />
+
+    <link rel="stylesheet" href="codemirror/codemirror.css" />
+    <link rel="stylesheet" href="./codemirror/dracula.css" />
+    <link rel="stylesheet" href="./codemirror/xq-light.css" />
+    <script src="./codemirror/codemirror.js"></script>
+    <script src="./codemirror/xml.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css"
+    />
+    <link
+      href="https://cdn.datatables.net/v/bs5/jszip-3.10.1/b-2.4.1/b-colvis-2.4.1/b-html5-2.4.1/b-print-2.4.1/datatables.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#f5f8fa] scrollbar relative dark:bg-[#151521]">
+    <div class="loads"></div>
+
+    <div class="dash"></div>
+
+    <div
+      class="flex justify-center xl:w-[82%] lg:w-[79%] pt-[80px] px-3 lg:px-9 w-full ltr:ml-auto rtl:mr-auto items-center"
+    >
+      <div
+        class="dark:backgrounddark py-3 background rounded-lg w-full space-y-2"
+      >
+        <div class="flex px-5 justify-between">
+          <h1 class="text-center dark:text-white text-xl font-bold">other</h1>
+          <li
+            class="search hidden act1 px-4 py-1 rounded-md cursor-pointer relative z-30 flex"
+          >
+            <span
+              class="svg-icon fill-[#A1A5B7] duration-300 cursor-pointer svg-icon-primary svg-icon-2x"
+              ><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Weather/Sun.svg--><svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                version="1.1"
+              >
+                <g
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <rect x="0" y="0" width="24" height="24" />
+                  <path
+                    class="fill-[#A1A5B7] duration-300"
+                    d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z"
+                    fill="#000000"
+                    fill-rule="nonzero"
+                  />
+                  <path
+                    class="fill-[#A1A5B7] duration-300"
+                    d="M19.5,10.5 L21,10.5 C21.8284271,10.5 22.5,11.1715729 22.5,12 C22.5,12.8284271 21.8284271,13.5 21,13.5 L19.5,13.5 C18.6715729,13.5 18,12.8284271 18,12 C18,11.1715729 18.6715729,10.5 19.5,10.5 Z M16.0606602,5.87132034 L17.1213203,4.81066017 C17.7071068,4.22487373 18.6568542,4.22487373 19.2426407,4.81066017 C19.8284271,5.39644661 19.8284271,6.34619408 19.2426407,6.93198052 L18.1819805,7.99264069 C17.5961941,8.57842712 16.6464466,8.57842712 16.0606602,7.99264069 C15.4748737,7.40685425 15.4748737,6.45710678 16.0606602,5.87132034 Z M16.0606602,18.1819805 C15.4748737,17.5961941 15.4748737,16.6464466 16.0606602,16.0606602 C16.6464466,15.4748737 17.5961941,15.4748737 18.1819805,16.0606602 L19.2426407,17.1213203 C19.8284271,17.7071068 19.8284271,18.6568542 19.2426407,19.2426407 C18.6568542,19.8284271 17.7071068,19.8284271 17.1213203,19.2426407 L16.0606602,18.1819805 Z M3,10.5 L4.5,10.5 C5.32842712,10.5 6,11.1715729 6,12 C6,12.8284271 5.32842712,13.5 4.5,13.5 L3,13.5 C2.17157288,13.5 1.5,12.8284271 1.5,12 C1.5,11.1715729 2.17157288,10.5 3,10.5 Z M12,1.5 C12.8284271,1.5 13.5,2.17157288 13.5,3 L13.5,4.5 C13.5,5.32842712 12.8284271,6 12,6 C11.1715729,6 10.5,5.32842712 10.5,4.5 L10.5,3 C10.5,2.17157288 11.1715729,1.5 12,1.5 Z M12,18 C12.8284271,18 13.5,18.6715729 13.5,19.5 L13.5,21 C13.5,21.8284271 12.8284271,22.5 12,22.5 C11.1715729,22.5 10.5,21.8284271 10.5,21 L10.5,19.5 C10.5,18.6715729 11.1715729,18 12,18 Z M4.81066017,4.81066017 C5.39644661,4.22487373 6.34619408,4.22487373 6.93198052,4.81066017 L7.99264069,5.87132034 C8.57842712,6.45710678 8.57842712,7.40685425 7.99264069,7.99264069 C7.40685425,8.57842712 6.45710678,8.57842712 5.87132034,7.99264069 L4.81066017,6.93198052 C4.22487373,6.34619408 4.22487373,5.39644661 4.81066017,4.81066017 Z M4.81066017,19.2426407 C4.22487373,18.6568542 4.22487373,17.7071068 4.81066017,17.1213203 L5.87132034,16.0606602 C6.45710678,15.4748737 7.40685425,15.4748737 7.99264069,16.0606602 C8.57842712,16.6464466 8.57842712,17.5961941 7.99264069,18.1819805 L6.93198052,19.2426407 C6.34619408,19.8284271 5.39644661,19.8284271 4.81066017,19.2426407 Z"
+                    fill="#000000"
+                    fill-rule="nonzero"
+                    opacity="0.3"
+                  />
+                </g></svg><!--end::Svg Icon--></span
+            >
+          </li>
+
+          <li
+            class="search act1 relative z-30 rounded-md px-4 cursor-pointer flex py-1"
+          >
+            <span class="svg-icon svg-icon-primary svg-icon-2x"
+              ><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Weather/Moon.svg--><svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                version="1.1"
+              >
+                <g
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <rect x="0" y="0" width="24" height="24" />
+                  <path
+                    class="fill-[#A1A5B7] duration-300"
+                    d="M12.0700837,4.0003006 C11.3895108,5.17692613 11,6.54297551 11,8 C11,12.3948932 14.5439081,15.9620623 18.9299163,15.9996994 C17.5467214,18.3910707 14.9612535,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C12.0233848,4 12.0467462,4.00010034 12.0700837,4.0003006 Z"
+                    fill="#000000"
+                  />
+                </g></svg><!--end::Svg Icon--></span
+            >
+          </li>
+        </div>
+        <div>
+          <div
+            class="flex bg-[#f5f8fa] justify-between py-16 w-full dark:bg-[#151521] md:justify-around flex-wrap"
+          >
+            <div class="w-full">
+              <!-- head  -->
+
+              <!-- head link 
+        <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css"
+    />
+    <link
+      href="https://cdn.datatables.net/v/bs5/jszip-3.10.1/b-2.4.1/b-colvis-2.4.1/b-html5-2.4.1/b-print-2.4.1/datatables.min.css"
+      rel="stylesheet"
+    /> -->
+              <!-- body  -->
+              <style>
+                #myTable_wrapper {
+                  width: 100%;
+                  overflow: hidden;
+                }
+                .lin {
+                  background: linear-gradient(
+                    to bottom,
+                    rgba(230, 230, 230, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 100%
+                  );
+                  color: black;
+                  border: 1px solid rgba(0, 0, 0, 0.3);
+                }
+                html.dark .lin {
+                  background: rgba(255, 255, 255, 0.15);
+                  background: linear-gradient(
+                    to bottom,
+                    rgba(230, 230, 230, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 100%
+                  );
+                  border: 1px solid rgb(89, 91, 94);
+                  color: white;
+                }
+                table.dataTable tbody th,
+                table.dataTable tbody td {
+                  padding: 1rem 1.5rem !important;
+                }
+                .not_active {
+                  background: linear-gradient(
+                    to bottom,
+                    rgba(230, 230, 230, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 100%
+                  );
+                  color: black;
+                  border: 1px solid rgba(0, 0, 0, 0.3);
+                  cursor: not-allowed;
+                  opacity: 0.5;
+                }
+                html.dark .not_active {
+                  opacity: 0.5;
+                  background: rgba(255, 255, 255, 0.15);
+                  background: linear-gradient(
+                    to bottom,
+                    rgba(230, 230, 230, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 100%
+                  );
+                  border: 1px solid rgb(89, 91, 94);
+                  color: white;
+                  cursor: not-allowed;
+                }
+                .disabled {
+                  background-color: red;
+                  /* !important inside */
+                }
+                .show12 {
+                  animation: tranlslate 0.7s linear forwards;
+                }
+                .hide12 {
+                  animation: bgop 0.7s linear forwards;
+                }
+                @keyframes bgop {
+                  0% {
+                    opacity: 0;
+                  }
+                  100% {
+                    opacity: 0.4;
+                  }
+                }
+                @keyframes tranlslate {
+                  0% {
+                    transform: translateY(-20%);
+                    opacity: 0;
+                  }
+                  100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                  }
+                }
+                .hidere {
+                  animation: bgopre 0.5s linear forwards;
+                }
+                @keyframes bgopre {
+                  0% {
+                    opacity: 0.4;
+                  }
+                  100% {
+                    opacity: 0;
+                  }
+                }
+                .showre {
+                  animation: tranlslatere 0.7s linear forwards;
+                }
+                @keyframes tranlslatere {
+                  0% {
+                    opacity: 1;
+                    transform: translateY(0%);
+                  }
+                  100% {
+                    transform: translateY(20%);
+                    opacity: 0;
+                  }
+                }
+                .selected {
+                  background-color: #0d6efd !important;
+                  color: white;
+                }
+                #myTable_filter {
+                  float: none;
+                  color: black;
+                }
+                html.dark #myTable_filter {
+                  float: none;
+                  color: white;
+                }
+                #myTable_filter input {
+                  margin: 0 0 0 10px;
+                  padding: 3px 7px !important;
+                }
+                #myTable tbody tr {
+                  background-color: white;
+                  cursor: pointer;
+                  border-bottom: 1px solid black;
+                }
+                #myTable tbody tr:hover {
+                  background-color: rgb(249, 250, 251);
+                }
+                html.dark #myTable tbody tr {
+                  background-color: rgb(31, 41, 55);
+                  cursor: pointer;
+                  border-bottom: 1px solid rgb(55, 65, 81);
+                }
+                html.dark #myTable tbody tr:hover {
+                  background-color: rgb(75, 85, 99);
+                }
+                html.dark #myTable_info {
+                  color: white !important;
+                  font-weight: 500;
+                }
+                #dataTables_info {
+                  font-weight: 500;
+                  color: rgb(156, 163, 175) !important;
+                }
+                .jj {
+                  background: linear-gradient(
+                    to bottom,
+                    rgba(230, 230, 230, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 100%
+                  ) !important;
+                  color: black !important;
+                  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+                }
+                html.dark .jj {
+                  background: rgba(255, 255, 255, 0.15) !important ;
+                  background: linear-gradient(
+                    to bottom,
+                    rgba(230, 230, 230, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 100%
+                  ) !important;
+                  border: 1px solid rgb(89, 91, 94) !important;
+                  color: white !important;
+                }
+                .disabled {
+                  background: linear-gradient(
+                    to bottom,
+                    rgba(230, 230, 230, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 100%
+                  ) !important;
+                  color: black !important;
+                  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+                  cursor: not-allowed !important;
+                  opacity: 0.5 !important;
+                }
+                html.dark .disabled {
+                  opacity: 0.5;
+                  background: rgba(255, 255, 255, 0.15);
+                  background: linear-gradient(
+                    to bottom,
+                    rgba(230, 230, 230, 0.1) 0%,
+                    rgba(0, 0, 0, 0.1) 100%
+                  );
+                  border: 1px solid rgb(89, 91, 94);
+                  color: white;
+                  cursor: not-allowed;
+                }
+              </style>
+              <div
+                id="sectionedit"
+                class="h-screen hidden absolute top-0 left-0 w-full z-50 flex justify-center items-center"
+              >
+                <div
+                  id="bg"
+                  class="w-full hh hide12 h-full bg-black opacity-40 fixed"
+                ></div>
+                <div
+                  tabindex="-1"
+                  aria-hidden="true"
+                  class="flex items-center justify-center relative z-50 w-full p-4 overflow-x-hidden overflow-y-auto"
+                >
+                  <div
+                    id="editUserModal"
+                    class="fixed show12 z-50 w-full max-w-3xl max-h-full"
+                  >
+                    <!-- Modal content -->
+                    <form
+                      id="form1"
+                      action="#"
+                      class="relative bg-white rounded-lg shadow dark:bg-[#212529]"
+                    >
+                      <!-- Modal header -->
+                      <div
+                        class="flex items-start justify-between p-4 border-b rounded-t dark:bg-[#0000001a] dark:border-gray-600"
+                      >
+                        <h3
+                          class="text-xl font-semibold text-gray-900 dark:text-white"
+                        >
+                          <span id="spa"></span> user
+                        </h3>
+                        <button
+                          id="xbut"
+                          type="button"
+                          class="text-gray-400 hh bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ltr:ml-auto rtl:mr-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                          data-modal-hide="editUserModal"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="p-6 space-y-6">
+                        <div class="grid grid-cols-6 gap-6">
+                          <div class="col-span-6 sm:col-span-3">
+                            <label
+                              for="name"
+                              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              >Name</label
+                            >
+                            <input
+                              type="text"
+                              name="Name"
+                              id="name"
+                              class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block dark:bg-[#212529] w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              placeholder="Bonnie"
+                              required=""
+                            />
+                          </div>
+                          <div class="col-span-6 sm:col-span-3">
+                            <label
+                              for="postion"
+                              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              >postion</label
+                            >
+                            <input
+                              type="text"
+                              name="postion"
+                              id="postion"
+                              class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block dark:bg-[#212529] w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              placeholder="postion"
+                              required=""
+                            />
+                          </div>
+                          <div class="col-span-6 sm:col-span-3">
+                            <label
+                              for="stat-data"
+                              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              >stat-data</label
+                            >
+                            <input
+                              type="text"
+                              name="stat-data"
+                              id="stat-data"
+                              class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block dark:bg-[#212529] w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              placeholder="stat-data"
+                              required=""
+                            />
+                          </div>
+                          <div class="col-span-6 sm:col-span-3">
+                            <label
+                              for="salary"
+                              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                              >salary</label
+                            >
+                            <input
+                              type="money"
+                              name="salary"
+                              id="salary"
+                              class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block dark:bg-[#212529] w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              placeholder="salary"
+                              required=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center ltr:justify-end rtl:justify-start p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600 dark:bg-[#0000001a]"
+                      >
+                        <button
+                          id="butsc"
+                          class="text-white capitalize bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                          create
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <table
+                  id="myTable"
+                  class="overflow-x-scroll"
+                  style="width: 100%"
+                >
+                  <thead>
+                    <tr class=" ">
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>postion</th>
+                      <th>stat-data</th>
+                      <th>salary</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+              <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+              <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+              <script src="https://cdn.datatables.net/v/bs5/jszip-3.10.1/b-2.4.1/b-colvis-2.4.1/b-html5-2.4.1/b-print-2.4.1/datatables.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+              <script>
+                $(document).ready(function () {
+                  var dataSet = [
+                    [1, "Brod Lempel", "Calle Blancos", "5/31/2023", "$3.55"],
+                    [
+                      2,
+                      "Wendell Antonelli",
+                      "Verkhnevilyuysk",
+                      "10/16/2022",
+                      "$0.25",
+                    ],
+                    [3, "Theodosia Cassidy", "Bang Rak", "2/18/2023", "$4.46"],
+                    [4, "Courtenay Oliphant", "Dachong", "1/27/2023", "$4.12"],
+                    [5, "Haroun Dowsett", "Lankaran", "12/11/2022", "$1.35"],
+                    [6, "Clemmy Tremmil", "Bordeaux", "5/10/2023", "$3.99"],
+                    [7, "Corine Jeafferson", "Tabug", "11/28/2022", "$3.25"],
+                    [8, "Elroy De Freitas", "Okayama-shi", "7/5/2023", "$4.87"],
+                    [9, "Priscella Relton", "Drásov", "10/23/2022", "$1.93"],
+                    [10, "Ivette Rubke", "Kołczygłowy", "2/24/2023", "$1.14"],
+                    [11, "Milka Sellan", "Yuanping", "2/28/2023", "$5.52"],
+                    [12, "Frank Cowins", "Włoszczowa", "1/25/2023", "$3.19"],
+                    [13, "Spenser Gillebride", "Stepnica", "7/4/2023", "$1.92"],
+                    [
+                      14,
+                      "Wendell MacCallum",
+                      "Bridgetown",
+                      "4/9/2023",
+                      "$9.43",
+                    ],
+                    [15, "Chariot McElvine", "Chartres", "2/24/2023", "$9.60"],
+                    [16, "Walton Bogie", "Nanmuping", "5/10/2023", "$4.92"],
+                    [17, "Donna Andreini", "Machida", "10/9/2022", "$5.57"],
+                    [18, "Rebekkah Allmen", "Mojokerto", "2/4/2023", "$1.55"],
+                    [
+                      19,
+                      "Arman Gemlbett",
+                      "Dzików Stary",
+                      "6/11/2023",
+                      "$2.63",
+                    ],
+                    [20, "Damara Lafflin", "Nanger", "6/17/2023", "$1.75"],
+                    [21, "Uriah Woodard", "Masape", "3/24/2023", "$8.52"],
+                    [
+                      22,
+                      "Vernice Pickett",
+                      "Shreveport",
+                      "12/30/2022",
+                      "$8.78",
+                    ],
+                    [23, "Wells Trueman", "Jāsk", "12/12/2022", "$3.79"],
+                    [24, "Vick Hesbrook", "Venda", "4/9/2023", "$8.93"],
+                    [25, "Andra Broadwood", "Zhongzhai", "6/25/2023", "$0.81"],
+                    [
+                      26,
+                      "Weidar Spykings",
+                      "Arroyo Naranjo",
+                      "1/23/2023",
+                      "$0.10",
+                    ],
+                    [27, "Lin Lucken", "Oymak", "12/16/2022", "$4.61"],
+                    [28, "Salomi Di Batista", "Suzuka", "5/23/2023", "$3.25"],
+                    [29, "Doria O'Doireidh", "Dauriya", "5/3/2023", "$7.23"],
+                    [30, "Cacilia Swiers", "Champagnole", "5/14/2023", "$5.33"],
+                    [31, "Liam MacAnellye", "Bintang", "1/23/2023", "$2.70"],
+                    [32, "Justina Broz", "San Jorge", "5/30/2023", "$4.11"],
+                    [33, "Gillie Boundley", "Ulcinj", "7/12/2022", "$1.46"],
+                    [34, "Donal Sims", "Chengzhong", "9/19/2022", "$6.28"],
+                    [
+                      35,
+                      "Carlotta Ramberg",
+                      "Habingkloang",
+                      "5/20/2023",
+                      "$8.46",
+                    ],
+                    [36, "Emelda Guinery", "Khorostkiv", "1/22/2023", "$6.77"],
+                    [37, "Bartlett Chorlton", "La Cruz", "1/7/2023", "$4.65"],
+                    [38, "Clare Melia", "Patrocinio", "3/30/2023", "$8.25"],
+                    [
+                      39,
+                      "Brittany Collacombe",
+                      "Kurchatov",
+                      "8/4/2022",
+                      "$5.01",
+                    ],
+                    [40, "Arther Oblein", "Diaowei", "4/3/2023", "$1.30"],
+                    [41, "Archie Bowles", "Potrerillos", "2/24/2023", "$8.42"],
+                    [42, "Nady Diggles", "Setúbal", "10/2/2022", "$7.09"],
+                    [43, "Alford Konke", "Bayeux", "5/12/2023", "$5.31"],
+                    [
+                      44,
+                      "Alex Sandeman",
+                      "Coronel Vivida",
+                      "8/27/2022",
+                      "$1.18",
+                    ],
+                    [45, "Haley Kulicke", "Kotanopan", "6/25/2023", "$9.47"],
+                    [46, "Alisa Boggon", "Liushun", "11/20/2022", "$8.77"],
+                    [47, "Paulita Wimes", "Saint-Péray", "8/22/2022", "$2.21"],
+                    [
+                      48,
+                      "Susie Ciementini",
+                      "San Pedro Necta",
+                      "1/31/2023",
+                      "$8.56",
+                    ],
+                    [49, "Halli Crabtree", "Tayuan", "12/28/2022", "$2.26"],
+                    [50, "Ezra McQuillin", "Ganzi", "3/4/2023", "$6.03"],
+                    [
+                      51,
+                      "Christen Fields",
+                      "Bandar Seri Begawan",
+                      "1/4/2023",
+                      "$3.11",
+                    ],
+                    [52, "Nike Elgie", "Záhorovice", "5/24/2023", "$1.15"],
+                    [53, "Marne Cumbes", "Cilangkap", "4/29/2023", "$1.92"],
+                    [54, "Andria Klimentyev", "Sonder", "3/1/2023", "$9.16"],
+                    [
+                      55,
+                      "Bab Moulsdale",
+                      "Carlos Tejedor",
+                      "9/29/2022",
+                      "$0.50",
+                    ],
+                    [56, "Dolf Vickers", "Jiangkou", "12/15/2022", "$3.92"],
+                    [57, "Fran Wadmore", "Sobontoro", "9/1/2022", "$9.74"],
+                    [58, "Emmet Stratiff", "Kuanfatu", "8/17/2022", "$2.39"],
+                    [
+                      59,
+                      "Evaleen Dunning",
+                      "Cedar Rapids",
+                      "12/30/2022",
+                      "$1.72",
+                    ],
+                    [
+                      60,
+                      "Renaldo Rubinovitch",
+                      "Zborište",
+                      "11/18/2022",
+                      "$3.50",
+                    ],
+                    [
+                      61,
+                      "Farrel Allabush",
+                      "Limín Khersonísou",
+                      "10/26/2022",
+                      "$9.49",
+                    ],
+                    [62, "Nerta Ellicock", "Xishaping", "5/13/2023", "$1.89"],
+                    [63, "Britt Phelit", "Paris 09", "10/22/2022", "$8.26"],
+                    [64, "Margalo Remirez", "Ma‘lūlā", "1/20/2023", "$0.80"],
+                    [65, "Nerissa Haistwell", "Shibetsu", "9/1/2022", "$9.01"],
+                    [66, "Ham Linforth", "Pil’na", "11/19/2022", "$4.89"],
+                    [67, "Colby Nealey", "Changfeng", "3/6/2023", "$0.67"],
+                    [
+                      68,
+                      "Rowena Stenhouse",
+                      "Zelenoborskiy",
+                      "4/15/2023",
+                      "$5.71",
+                    ],
+                    [69, "Peadar McIan", "Baldone", "7/6/2023", "$7.28"],
+                    [70, "Beverlee McHugh", "Sampaloc", "12/1/2022", "$8.84"],
+                    [71, "Murdock Jendricke", "Cabangan", "9/16/2022", "$2.08"],
+                    [72, "Dewey Kerin", "Panganiban", "10/18/2022", "$5.83"],
+                    [73, "Derril Losel", "Dao", "2/25/2023", "$7.45"],
+                    [74, "Cacilia Turland", "Apače", "1/11/2023", "$7.61"],
+                    [75, "Lory Palia", "Pilar", "3/23/2023", "$5.23"],
+                    [76, "Tessie Turvey", "As Suwaydā", "10/20/2022", "$7.19"],
+                    [
+                      77,
+                      "Hilliard Fedder",
+                      "Kalinovskaya",
+                      "8/1/2022",
+                      "$7.20",
+                    ],
+                    [
+                      78,
+                      "Glendon MacGillacolm",
+                      "Novomoskovsk",
+                      "10/16/2022",
+                      "$1.21",
+                    ],
+                    [79, "Eliza Sterricks", "Unity", "11/8/2022", "$1.29"],
+                    [80, "Madelle Bulteel", "Shchelkovo", "5/21/2023", "$0.42"],
+                    [81, "Rosemarie Schollar", "Gaplek", "11/6/2022", "$7.45"],
+                    [82, "Mariya Vasechkin", "Kawambwa", "1/14/2023", "$3.45"],
+                    [83, "Catrina Deetlof", "Monção", "3/26/2023", "$9.19"],
+                    [
+                      84,
+                      "Charmain Nucciotti",
+                      "Banjar Sembunggede",
+                      "7/25/2022",
+                      "$6.78",
+                    ],
+                    [
+                      85,
+                      "Durante Grewer",
+                      "Limín Khersonísou",
+                      "4/22/2023",
+                      "$4.69",
+                    ],
+                    [
+                      86,
+                      "Siouxie Wellesley",
+                      "Trollhättan",
+                      "1/26/2023",
+                      "$0.00",
+                    ],
+                    [
+                      87,
+                      "Davis de'-Ancy Willis",
+                      "Sollefteå",
+                      "10/29/2022",
+                      "$4.45",
+                    ],
+                    [88, "Brear Domenichelli", "Gorbatov", "9/5/2022", "$1.41"],
+                    [
+                      89,
+                      "Rivkah Christiensen",
+                      "Magersari",
+                      "6/23/2023",
+                      "$3.46",
+                    ],
+                    [90, "Oralia Scrivin", "Knjazevac", "7/5/2023", "$0.59"],
+                    [91, "Nomi Hancell", "Garešnica", "5/12/2023", "$4.48"],
+                    [92, "Herculie Measham", "Levski", "10/7/2022", "$7.04"],
+                    [93, "Janette Midson", "Tarumizu", "3/19/2023", "$6.40"],
+                    [
+                      94,
+                      "Theodore Ivantyev",
+                      "Thị Trấn Thọ Xuân",
+                      "6/28/2023",
+                      "$8.73",
+                    ],
+                    [95, "Abey John", "Golubac", "3/15/2023", "$1.83"],
+                    [96, "Boigie Fawthrop", "Ręczno", "10/26/2022", "$4.37"],
+                    [97, "Tobe Pitrelli", "Nybro", "3/6/2023", "$7.60"],
+                    [
+                      98,
+                      "Bernie Thrussell",
+                      "Verkhovyna",
+                      "3/30/2023",
+                      "$0.53",
+                    ],
+                    [99, "Flory Aleevy", "Tahoua", "2/23/2023", "$7.08"],
+                    [100, "Kaylil Lohde", "Tuanai", "11/7/2022", "$9.00"],
+                  ];
+                  let id = 0;
+                  var table = $("#myTable").DataTable({
+                    data: dataSet,
+                    select: true,
+                    columns: [
+                      { title: "ID" },
+                      { title: " Name" },
+                      { title: "postion" },
+                      { title: "stat-data" },
+                      { title: "salary" },
+                    ],
+                    columnDefs: [
+                      {
+                        target: 0,
+                        visible: false,
+                      },
+                    ],
+                    dom: "<'top'<'flex mx-10 mt-4 flex-wrap sm:flex-nowrap justify-between'<'flex w-full sm:w-auto justify-center items-center'<'w-auto'B>><'flex justify-center items-center w-full sm:w-auto 'f>>><'relative md:w-[98%] w-full mx-auto  my-4 overflow-x-auto shadow-md sm:rounded-lg'rt><'bottom flex mx-10 justify-between flex-wrap' <'float-none text-center mx-auto mt-2 md:mx-0' i> <'mx-auto mt-2 md:mx-0' p>>",
+                    buttons: [
+                      {
+                        text: "New",
+                        className:
+                          "new cursor-pointer px-3 py-1  rounded-sm lin text-white border-[.5px] text-base ",
+                        action: function (e, dt, node, config) {
+                          $("#sectionedit").removeClass("hidden");
+                          $("#spa").html("New");
+                          $("#butsc").html("Create");
+                          document.getElementById("form1").reset();
+                        },
+                      },
+                      {
+                        text: "Edit",
+                        className:
+                          "edit_delete edit not_active mx-4  px-3 py-1  duration-500 rounded-sm   border text-base",
+                        action: function () {
+                          var selectedRows = table.rows(".selected").data();
+                          $("#sectionedit").removeClass("hidden");
+                          $("#spa").html("Edit");
+                          $("#butsc").html("Save");
+                          $("#name").val(selectedRows[0][1]);
+                          $("#postion").val(selectedRows[0][2]);
+                          $("#stat-data").val(selectedRows[0][3]);
+                          $("#salary").val(selectedRows[0][4]);
+                          id = selectedRows[0][0];
+                        },
+                      },
+                      {
+                        text: "Delete",
+                        className:
+                          "edit_delete delete not_active px-3 py-1 duration-500   rounded-sm  border text-base",
+                        action: function () {
+                          Swal.fire({
+                            title: "Are you sure?",
+                            text: "You won't be able to revert this!",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Yes, delete it!",
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              Swal.fire(
+                                "Deleted!",
+                                "Your file has been deleted.",
+                                "success"
+                              );
+                              var selectedRows = table.rows(".selected").data();
+                              dataSet = dataSet.filter(
+                                (d) => d != selectedRows[0]
+                              );
+                              table.clear().rows.add(dataSet).draw();
+                              formattable();
+                              $(".edit_delete").css("opacity", ".5");
+                              $(".edit_delete").prop("disabled", true);
+                            }
+                          });
+                        },
+                      },
+                    ],
+                  });
+                  // delete and edit button
+                  $(".edit_delete").prop("disabled", true);
+                  $("#myTable tbody").on("click", "tr", function () {
+                    // Toggle selected and bg-black classes on clicked row
+                    $(this).toggleClass("selected");
+                    $(this).toggleClass("bg-black");
+                    // Remove selected and bg-black classes from all other rows
+                    $("#myTable tbody tr")
+                      .not(this)
+                      .removeClass("selected bg-black");
+                    // Log selected rows to console
+                    var selectedRows = table.rows(".selected").data();
+                    if (selectedRows.length == 0) {
+                      $(".edit_delete").css("opacity", ".5");
+                      $(".edit_delete").css("cursor", "not-allowed");
+                      $(".edit_delete").prop("disabled", true);
+                      return;
+                    } else {
+                      $(".edit_delete").css("opacity", "1");
+                      $(".edit_delete").prop("disabled", false);
+                      $(".edit_delete").css("cursor", "pointer");
+                    }
+                  });
+                  $("#butsc").on("click", (even) => {
+                    if ($("#butsc").html() == "Create") {
+                      if (
+                        $("#name").val() != "" &&
+                        $("#postion").val() != "" &&
+                        $("#stat-data").val() != "" &&
+                        $("#salary").val() != ""
+                      ) {
+                        let newid = dataSet[0][0] - 1;
+                        let details = [];
+                        details.push(newid);
+                        details.push($("#name").val());
+                        details.push($("#postion").val());
+                        details.push($("#stat-data").val());
+                        details.push($("#salary").val());
+                        dataSet.unshift(details);
+                        console.log(dataSet);
+                        even.preventDefault();
+                        console.log(newid);
+                        table.clear().rows.add(dataSet).draw();
+                        remove();
+                      }
+                    } else {
+                      if (
+                        $("#name").val() != "" &&
+                        $("#postion").val() != "" &&
+                        $("#stat-data").val() != "" &&
+                        $("#salary").val() != ""
+                      ) {
+                        let details = [];
+                        details.push(id);
+                        details.push($("#name").val());
+                        details.push($("#postion").val());
+                        details.push($("#stat-data").val());
+                        details.push($("#salary").val());
+                        console.log(dataSet);
+                        for (let i = 0; i < dataSet.length; i++) {
+                          if (dataSet[i][0] == id) {
+                            dataSet[i] = details;
+                          }
+                        }
+                        even.preventDefault();
+                        table.clear().rows.add(dataSet).draw();
+                        remove();
+                        $(".edit_delete").css("opacity", ".5");
+                        $(".edit_delete").prop("disabled", true);
+                      }
+                    }
+                  });
+                  formattable();
+                  // Add class to table
+                  function formattable() {
+                    $("#myTable").addClass(
+                      "w-full text-sm text-left text-gray-500 dark:text-gray-400"
+                    );
+                    // Add class to thead
+                    $("#myTable thead").addClass(
+                      "text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                    );
+                    $("#myTable thead tr th").addClass("px-6 py-3");
+                    // Add class to tbody
+                    $("#myTable tbody").addClass("tbody-light");
+                    // Add class to tr elements
+                    $("#myTable tbody tr").addClass(
+                      "bg-white border-b dark:bg-gray-800 cursor-pointer  dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                    );
+                    // Add class to th elements
+                    $("#myTable  tbody tr th").addClass(
+                      "px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    );
+                  }
+                  let paging_simple_numbers = document.querySelector(
+                    ".paging_simple_numbers"
+                  );
+                  paging_simple_numbers.style.float = "none";
+                  let dataTables_info =
+                    document.querySelector(".dataTables_info");
+                  dataTables_info.style.float = "none";
+                });
+                $(".hh").on("click", remove);
+                function remove() {
+                  $("#bg").removeClass("hide12");
+                  $("#bg").addClass("hidere");
+                  $("#editUserModal").removeClass("show12");
+                  $("#editUserModal").addClass("showre");
+                  setTimeout(() => {
+                    $("#sectionedit").addClass("hidden");
+                    $("#bg").addClass("hide12");
+                    $("#editUserModal").addClass("show12");
+                    $("#editUserModal").removeClass("showre");
+                    $("#bg").removeClass("hidere");
+                  }, 700);
+                }
+              </script>
+            </div>
+          </div>
+
+          <div
+            class="text-right h-full relative bottom-3 dark:bg-[#151521] bg-[#f5f8fa] mb-2"
+          >
+            <button
+              type="button"
+              class="text-gray-900 inline-block h-10 bg-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 copycode"
+            >
+              Copy code
+            </button>
+          </div>
+          <button
+            type="button"
+            id="show_code"
+            class="show_code text-white relative z-30 block cursor-pointer mx-auto bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-5 mb-2"
+          >
+            Show Code
+          </button>
+
+          <div
+            class="overflow-hidden bg-[#f5f8fa] dark:bg-[#151521] text-white duration-500 overflow-y-scroll scrollbar2 dark:scrollbar2dark"
+          >
+            <textarea readonly class="bg-white codemi"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer  -->
+
+    <div class="foot"></div>
+
+    <script src="./js/db.js"></script>
+    <script src="./js/dachboard.js"></script>
+    <script src="./js/profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark system">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/tailwindcss.css" />
+
+  <link rel="stylesheet" href="codemirror/codemirror.css" />
+  <link rel="stylesheet" href="./codemirror/dracula.css" />
+  <link rel="stylesheet" href="./codemirror/xq-light.css" />
+  <script src="./codemirror/codemirror.js"></script>
+  <script src="./codemirror/xml.js"></script>
+</head>
+
+<body class="bg-[#f5f8fa] scrollbar relative dark:bg-[#151521]">
+  <div class="loads">
+
+  </div>
+
+  <div class="dash">
+
+  </div>
+
+  <div
+    class="flex justify-center xl:w-[82%] lg:w-[79%] pt-[80px] px-3 lg:px-9 w-full ltr:ml-auto rtl:mr-auto items-center">
+    <div class="dark:backgrounddark py-3 background rounded-lg w-full space-y-2">
+      <div class="flex px-5 justify-between">
+        <h1 class="text-center dark:text-white text-xl font-bold">other</h1>
+        <li class="search hidden act1 px-4 py-1 rounded-md cursor-pointer relative z-30 flex">
+          <span
+            class="svg-icon fill-[#A1A5B7] duration-300 cursor-pointer svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Weather/Sun.svg--><svg
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+              viewBox="0 0 24 24" version="1.1">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <rect x="0" y="0" width="24" height="24" />
+                <path class="fill-[#A1A5B7] duration-300"
+                  d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z"
+                  fill="#000000" fill-rule="nonzero" />
+                <path class="fill-[#A1A5B7] duration-300"
+                  d="M19.5,10.5 L21,10.5 C21.8284271,10.5 22.5,11.1715729 22.5,12 C22.5,12.8284271 21.8284271,13.5 21,13.5 L19.5,13.5 C18.6715729,13.5 18,12.8284271 18,12 C18,11.1715729 18.6715729,10.5 19.5,10.5 Z M16.0606602,5.87132034 L17.1213203,4.81066017 C17.7071068,4.22487373 18.6568542,4.22487373 19.2426407,4.81066017 C19.8284271,5.39644661 19.8284271,6.34619408 19.2426407,6.93198052 L18.1819805,7.99264069 C17.5961941,8.57842712 16.6464466,8.57842712 16.0606602,7.99264069 C15.4748737,7.40685425 15.4748737,6.45710678 16.0606602,5.87132034 Z M16.0606602,18.1819805 C15.4748737,17.5961941 15.4748737,16.6464466 16.0606602,16.0606602 C16.6464466,15.4748737 17.5961941,15.4748737 18.1819805,16.0606602 L19.2426407,17.1213203 C19.8284271,17.7071068 19.8284271,18.6568542 19.2426407,19.2426407 C18.6568542,19.8284271 17.7071068,19.8284271 17.1213203,19.2426407 L16.0606602,18.1819805 Z M3,10.5 L4.5,10.5 C5.32842712,10.5 6,11.1715729 6,12 C6,12.8284271 5.32842712,13.5 4.5,13.5 L3,13.5 C2.17157288,13.5 1.5,12.8284271 1.5,12 C1.5,11.1715729 2.17157288,10.5 3,10.5 Z M12,1.5 C12.8284271,1.5 13.5,2.17157288 13.5,3 L13.5,4.5 C13.5,5.32842712 12.8284271,6 12,6 C11.1715729,6 10.5,5.32842712 10.5,4.5 L10.5,3 C10.5,2.17157288 11.1715729,1.5 12,1.5 Z M12,18 C12.8284271,18 13.5,18.6715729 13.5,19.5 L13.5,21 C13.5,21.8284271 12.8284271,22.5 12,22.5 C11.1715729,22.5 10.5,21.8284271 10.5,21 L10.5,19.5 C10.5,18.6715729 11.1715729,18 12,18 Z M4.81066017,4.81066017 C5.39644661,4.22487373 6.34619408,4.22487373 6.93198052,4.81066017 L7.99264069,5.87132034 C8.57842712,6.45710678 8.57842712,7.40685425 7.99264069,7.99264069 C7.40685425,8.57842712 6.45710678,8.57842712 5.87132034,7.99264069 L4.81066017,6.93198052 C4.22487373,6.34619408 4.22487373,5.39644661 4.81066017,4.81066017 Z M4.81066017,19.2426407 C4.22487373,18.6568542 4.22487373,17.7071068 4.81066017,17.1213203 L5.87132034,16.0606602 C6.45710678,15.4748737 7.40685425,15.4748737 7.99264069,16.0606602 C8.57842712,16.6464466 8.57842712,17.5961941 7.99264069,18.1819805 L6.93198052,19.2426407 C6.34619408,19.8284271 5.39644661,19.8284271 4.81066017,19.2426407 Z"
+                  fill="#000000" fill-rule="nonzero" opacity="0.3" />
+              </g>
+            </svg><!--end::Svg Icon--></span>
+        </li>
+
+        <li class="search act1 relative z-30 rounded-md px-4 cursor-pointer flex py-1">
+          <span
+            class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Weather/Moon.svg--><svg
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+              viewBox="0 0 24 24" version="1.1">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <rect x="0" y="0" width="24" height="24" />
+                <path class="fill-[#A1A5B7] duration-300"
+                  d="M12.0700837,4.0003006 C11.3895108,5.17692613 11,6.54297551 11,8 C11,12.3948932 14.5439081,15.9620623 18.9299163,15.9996994 C17.5467214,18.3910707 14.9612535,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C12.0233848,4 12.0467462,4.00010034 12.0700837,4.0003006 Z"
+                  fill="#000000" />
+              </g>
+            </svg><!--end::Svg Icon--></span>
+        </li>
+      </div>
+      <div>
+        <div class="flex bg-[#f5f8fa] justify-between w-full dark:bg-[#151521] md:justify-around flex-wrap">
+
+          <div class="w-full my-10">
+            <section class="w-full overflow-x-hidden mx-auto">
+              <div class="flex w-full justify-between">
+                <aside class="reveal flex overflow-hidden relative z-0 w-full md:justify-center">
+                  <div class="sliderall flex">
+                    <div class="ii w-full px-4 mx-auto">
+                      <div class="block rounded-lg shadow-lg bg-white dark:bg-[#1e1e2d] text-center">
+                        <div class="pt-12 pb-10 relative overflow-hidden border-b border-gray-300 z-50">
+                          <img src="./Images/sodasi.png" class="block mx-auto" />
+                          <h2 class="py-3 text-4xl font-bold leading-[55px] text-[#272839] dark:text-slate-500">
+                            $<span class="price">10</span>.00
+                          </h2>
+                          <p class="text-lg font-medium leading-4 text-[#7c7d8a] dark:text-white">
+                            Basic Pack
+                          </p>
+                        </div>
+                        <div class="py-12 mb-8">
+                          <ul class="pb-10 xl:py-0 dark:text-white text-[#7c7d8a]">
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Extra features
+                              </p>
+                            </li>
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Lifetime free support
+                              </p>
+                            </li>
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Upgrate options
+                              </p>
+                            </li>
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Full access
+                              </p>
+                            </li>
+                          </ul>
+                          <div class="pt-[7%] xl:pt-16">
+                            <a href="#"
+                              class="text-white text-base font-bold rounded-md py-5 px-12 bg-gradient-to-r from-[#e41256] to-[#ffa337] animation postion">Get
+                              Started</a>
+                          </div>
+                          <h5 class="pt-10 text-[12px] tracking-[3px] text-[#7C7D8A] pb-3 dark:text-white">
+                            GET A FREE TRIAL
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ii w-full pr-4 mx-auto">
+                      <div class="block rounded-lg shadow-lg bg-white dark:bg-[#1e1e2d] text-center">
+                        <div class="pt-12 pb-10 relative overflow-hidden border-b border-gray-300 z-50">
+                          <img src="./Images/sodasi.png" class="block mx-auto" />
+                          <h2 class="py-3 text-4xl font-bold leading-[55px] text-[#272839] dark:text-slate-500">
+                            $<span class="price">10</span>.00
+                          </h2>
+                          <p class="text-lg font-medium leading-4 text-[#7c7d8a] dark:text-white">
+                            Basic Pack
+                          </p>
+                        </div>
+                        <div class="py-12 mb-8">
+                          <ul class="pb-10 xl:py-0 dark:text-white text-[#7c7d8a]">
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Extra features
+                              </p>
+                            </li>
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Lifetime free support
+                              </p>
+                            </li>
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Upgrate options
+                              </p>
+                            </li>
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Full access
+                              </p>
+                            </li>
+                          </ul>
+                          <div class="pt-[7%] xl:pt-16">
+                            <a href="#"
+                              class="text-white text-base font-bold rounded-md py-5 px-12 bg-gradient-to-r from-[#e41256] to-[#ffa337] animation postion">Get
+                              Started</a>
+                          </div>
+                          <h5 class="pt-10 text-[12px] tracking-[3px] text-[#7C7D8A] pb-3 dark:text-white">
+                            GET A FREE TRIAL
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ii w-full pr-4 mx-auto">
+                      <div class="block rounded-lg shadow-lg bg-white dark:bg-[#1e1e2d] text-center">
+                        <div class="pt-12 pb-10 relative overflow-hidden border-b border-gray-300 z-50">
+                          <img src="./Images/sodasi.png" class="block mx-auto" />
+                          <h2 class="py-3 text-4xl font-bold leading-[55px] text-[#272839] dark:text-slate-500">
+                            $<span class="price">10</span>.00
+                          </h2>
+                          <p class="text-lg font-medium leading-4 text-[#7c7d8a] dark:text-white">
+                            Basic Pack
+                          </p>
+                        </div>
+                        <div class="py-12 mb-8">
+                          <ul class="pb-10 xl:py-0 dark:text-white text-[#7c7d8a]">
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Extra features
+                              </p>
+                            </li>
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Lifetime free support
+                              </p>
+                            </li>
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Upgrate options
+                              </p>
+                            </li>
+                            <li>
+                              <img src="./Images/check-mark-48.png" class="w-5 inline align-middle" />
+                              <p class="inline align-middle text-base font-medium leading-4">
+                                Full access
+                              </p>
+                            </li>
+                          </ul>
+                          <div class="pt-[7%] xl:pt-16">
+                            <a href="#"
+                              class="text-white text-base font-bold rounded-md py-5 px-12 bg-gradient-to-r from-[#e41256] to-[#ffa337] animation postion">Get
+                              Started</a>
+                          </div>
+                          <h5 class="pt-10 text-[12px] tracking-[3px] text-[#7C7D8A] pb-3 dark:text-white">
+                            GET A FREE TRIAL
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </section>
+
+            <div class="control mt-5 mx-auto flex overflow-x-hidden justify-around">
+              <button class="mr-2" id="privous">
+                <svg class="w-6 fill-white h-6 cild rotate-180" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512">
+                  <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                </svg>
+              </button>
+              <ul class="flex ul">
+                <!-- <li value="1" class="border border-solid duration-500 p-2 mr-2 px-4 li cursor-pointer rounded-xl active">
+            1
+          </li> -->
+              </ul>
+              <button id="next" class="ml-2">
+                <svg class="w-6 fill-white cild h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                </svg>
+              </button>
+            </div>
+            <style>
+              .animation.postion:hover {
+                animation-duration: 0.5s;
+                animation-name: bgposani;
+                background-size: 200% auto;
+                background-image: linear-gradient(90deg,
+                    #e41256 0%,
+                    #ffa337 51%,
+                    #e41256 100%);
+                animation-fill-mode: forwards;
+              }
+
+              @keyframes bgposani {
+                0% {
+                  background-position: 0% 50%;
+                }
+
+                50% {
+                  background-position: 100% 50%;
+                }
+
+                100% {
+                  background-position: 100% 0;
+                }
+              }
+
+              :root {
+                --minWidht: 33.3%;
+              }
+
+              .ii {
+                min-width: var(--minWidht);
+              }
+            </style>
+
+            <script>
+              let dives = document.querySelectorAll(".ii");
+              //number of the div
+              let numberdiv = 3;
+              //many div you show
+              let number = 1;
+              // make responsive
+              let labe = 1024;
+              let tablet = 768;
+
+              if (window.innerWidth >= labe) {
+                numberdiv = numberdiv;
+              } else if (window.innerWidth >= tablet) {
+                numberdiv = numberdiv - 1;
+              } else {
+                numberdiv = numberdiv - 2;
+                number = numberdiv;
+              }
+              let index = numberdiv;
+              let root = document.querySelector(":root");
+              root.style.setProperty(
+                "--minWidht",
+                `${(1 / numberdiv) * 100}%`
+              );
+              //add div in the html
+              let sliderall = document.querySelector(".sliderall");
+
+              let firstCilde = [];
+              for (let i = 0; i < numberdiv; i++) {
+                firstCilde[i] = dives[i].cloneNode(true);
+              }
+
+              let lastCilde = [];
+              for (
+                let i = dives.length - 1;
+                i >= dives.length - numberdiv;
+                i--
+              ) {
+                lastCilde.push(dives[i].cloneNode(true));
+              }
+
+              firstCilde.forEach((c) => {
+                sliderall.append(c);
+              });
+              lastCilde.forEach((c) => {
+                sliderall.prepend(c);
+              });
+
+              let width = sliderall.children[0].clientWidth;
+
+              sliderall.style.transform = `translateX(-${width * numberdiv
+                }px)`;
+              // button
+              let Privous = document.querySelector("#privous");
+              let maxnumber;
+              let last;
+              maxnumber = dives.length + numberdiv;
+              last = 0;
+
+              let Next = document.querySelector("#next");
+              Next.addEventListener("click", nextdive);
+              Privous.addEventListener("click", befordive);
+              function nextdive(even) {
+                index += number;
+                sliderall.style.transition = ".5s";
+                sliderall.style.transform = `translateX(-${width * index}px)`;
+                if (index == maxnumber) {
+                  setTimeout(() => {
+                    sliderall.style.transition = "none";
+                    index = numberdiv;
+                    sliderall.style.transform = `translateX(-${width * index
+                      }px)`;
+                  }, 500)
+
+                }
+              }
+              function befordive() {
+
+                index -= number;
+                sliderall.style.transition = ".5s";
+                sliderall.style.transform = `translateX(-${width * index
+                  }px)`;
+                if (index == last) {
+
+                  setTimeout(() => {
+                    index = dives.length;
+                    sliderall.style.transition = "none";
+
+                    sliderall.style.transform = `translateX(-${width * index
+                      }px)`;
+
+
+                  }, 500)
+                }
+              }
+            </script>
+          </div>
+        </div>
+
+        <div class="text-right h-full relative bottom-3 dark:bg-[#151521] bg-[#f5f8fa] mb-2">
+          <button type="button"
+            class=" copycode  inline-block h-10 bg-[#5c81dc] text-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+            Copy code
+          </button>
+        </div>
+        <button type="button" id="show_code"
+          class="show_code text-white relative z-30 block cursor-pointer mx-auto bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-5 mb-2">
+          Show Code
+        </button>
+
+        <div
+          class="overflow-hidden bg-[#f5f8fa] dark:bg-[#151521] text-white duration-500 overflow-y-scroll scrollbar2 dark:scrollbar2dark">
+          <textarea readonly class="bg-white codemi"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- footer  -->
+  <div class="xl:w-[82%] lg:w-[79%] w-full ltr:ml-auto rtl:mr-auto mt-16">
+    <footer
+      class="bg-white dark:bg-gray-900 dark:text-gray-200 md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+      <ul class="flex items-center flex-wrap mb-6 md:mb-0">
+        <li>
+          <a class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Terms and conditions</a>
+        </li>
+        <li>
+          <a class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Privacy Policy</a>
+        </li>
+        <li>
+          <a class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Licensing</a>
+        </li>
+        <li>
+          <a class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Cookie Policy</a>
+        </li>
+        <li>
+          <a class="text-sm font-normal text-gray-500 hover:underline">Contact</a>
+        </li>
+      </ul>
+      <div class="flex sm:justify-center space-x-6">
+        <a href="https://www.facebook.com/profile.php?id=100042162248638" class="text-gray-500 hover:text-gray-900">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/m7mdk_f/" class="text-gray-500 hover:text-gray-900">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a class="text-gray-500 hover:text-gray-900">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+          </svg>
+        </a>
+        <a class="text-gray-500 hover:text-gray-900">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a class="text-gray-500 hover:text-gray-900 dark:hover:text-gray-600">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+    <p class="text-center dark:bg-gray-800 dark:text-gray-200 text-sm text-gray-500 py-10">
+      &copy; 4/7/2023 <a class="hover:underline">Made by mohamed</a>. with
+      team
+    </p>
+  </div>
+
+  <script src="./js/db.js"></script>
+  <script src="./js/dachboard.js"></script>
+  <script src="./js/profile.js"></script>
+</body>
+
+</html>
